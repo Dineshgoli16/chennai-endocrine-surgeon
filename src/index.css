@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-medical-navy: #0B2545;
+  --color-medical-navy-dark: #061528;
+  --color-medical-navy-light: #13315C;
+  --color-medical-teal: #05668D;
+  --color-medical-teal-dark: #028090;
+  --color-medical-teal-light: #F0F7F9;
+  --color-medical-gold: #C5A059;
+  --color-medical-gold-light: #FDF9F0;
+  --color-medical-gold-border: #D8B979;
+  --color-slate-bg: #FAF9F6;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-medical-navy);
+    background-color: var(--color-slate-bg);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Luxury Glassmorphism & Cards */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.glass-card-dark {
+  background: rgba(11, 37, 69, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px -5px rgba(11, 37, 69, 0.05), 0 4px 12px -2px rgba(11, 37, 69, 0.03);
+}
+
+.card-shadow-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-shadow-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -12px rgba(11, 37, 69, 0.14), 0 10px 20px -4px rgba(11, 37, 69, 0.08);
+}
+
+/* Gradients & Accents */
+.gold-accent-left {
+  border-left: 4px solid var(--color-medical-gold);
+}
+
+.teal-accent-left {
+  border-left: 4px solid var(--color-medical-teal);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #E8D399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-teal {
+  background: linear-gradient(135deg, #05668D 0%, #028090 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-mesh {
+  background-image: 
+    radial-gradient(at 90% 10%, rgba(5, 102, 141, 0.08) 0px, transparent 50%),
+    radial-gradient(at 10% 90%, rgba(197, 160, 89, 0.07) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(11, 37, 69, 0.03) 0px, transparent 50%);
+}
+
+.dark-mesh {
+  background-image: 
+    radial-gradient(at 80% 20%, rgba(5, 102, 141, 0.25) 0px, transparent 60%),
+    radial-gradient(at 20% 80%, rgba(197, 160, 89, 0.15) 0px, transparent 60%);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(197, 160, 89, 0.25);
+}
+
+.teal-glow {
+  box-shadow: 0 0 25px rgba(5, 102, 141, 0.2);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 2.5s infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5d0d8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #05668D;
+}

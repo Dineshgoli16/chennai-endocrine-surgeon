@@ -1,0 +1,8 @@
+{
+  "name": "Dr. Adarsh Raghavan | Endocrine, Scarless & Breast Surgery",
+  "description": "Premium medical practice website for Dr. Adarsh Raghavan, MBBS, MS, MCh Endocrine Surgery, specialized in thyroid, parathyroid, scarless TOETVA, adrenal, and breast oncoplastic surgeries in Chennai.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
