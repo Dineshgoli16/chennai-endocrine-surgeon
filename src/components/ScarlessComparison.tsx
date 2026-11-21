@@ -20,7 +20,7 @@ export default function ScarlessComparison({ onBookClick }: { onBookClick: () =>
             Scarless TOETVA vs Traditional Surgery
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-3 font-sans max-w-xl mx-auto">
-            Compare the transformative benefits of Transoral Endoscopic Thyroidectomy Vestibular Approach (TOETVA) pioneered by Dr. Adarsh Raghavan in Chennai.
+            Compare the transformative benefits of Transoral Endoscopic Thyroidectomy Vestibular Approach (TOETVA) pioneered by Dr. Aadarsh Raghavan in Chennai.
           </p>
 
           {/* Toggle Switch */}
@@ -178,7 +178,7 @@ export default function ScarlessComparison({ onBookClick }: { onBookClick: () =>
                 onClick={onBookClick}
                 className="px-6 py-3 rounded-full bg-[#0B2545] hover:bg-[#13315C] text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center gap-2"
               >
-                Am I Eligible for TOETVA? Check With Dr. Adarsh <ChevronRight size={14} />
+                Am I Eligible for TOETVA? Check With Dr. Aadarsh <ChevronRight size={14} />
               </button>
             </div>
           </div>

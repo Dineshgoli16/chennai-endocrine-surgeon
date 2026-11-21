@@ -20,8 +20,8 @@ const TESTIMONIALS: Testimonial[] = [
     location: 'Anna Nagar, Chennai',
     procedure: 'Total Thyroidectomy & Central Neck Dissection',
     stars: 5,
-    quote: 'My thyroid cancer was diagnosed early, and Dr. Adarsh preserved my voice completely.',
-    story: 'I was terrified when my FNAC showed papillary cancer, especially because I am a school teacher and rely on my voice every single day. Dr. Adarsh Raghavan explained the nerve monitoring technique with immense patience. The surgery at SIMS Hospital went smoothly, my vocal cords were 100% fine the same evening, and my biopsy showed clear margins. God bless him.',
+    quote: 'My thyroid cancer was diagnosed early, and Dr. Aadarsh preserved my voice completely.',
+    story: 'I was terrified when my FNAC showed papillary cancer, especially because I am a school teacher and rely on my voice every single day. Dr. Aadarsh Raghavan explained the nerve monitoring technique with immense patience. The surgery at SIMS Hospital went smoothly, my vocal cords were 100% fine the same evening, and my biopsy showed clear margins. God bless him.',
     date: 'February 2026'
   },
   {
@@ -31,7 +31,7 @@ const TESTIMONIALS: Testimonial[] = [
     procedure: 'Scarless TOETVA Thyroidectomy',
     stars: 5,
     quote: 'Zero cuts on my neck! Nobody can even tell I had thyroid surgery.',
-    story: 'Being 26 years old, the thought of a visible collar scar across my throat made me very anxious. Dr. Adarsh told me about TOETVA surgery done through the mouth. The incisions healed inside my lip in just a few days. Now 3 months later, there is absolutely zero mark on my neck. Truly miraculous technology in Chennai.',
+    story: 'Being 26 years old, the thought of a visible collar scar across my throat made me very anxious. Dr. Aadarsh told me about TOETVA surgery done through the mouth. The incisions healed inside my lip in just a few days. Now 3 months later, there is absolutely zero mark on my neck. Truly miraculous technology in Chennai.',
     date: 'January 2026'
   },
   {
@@ -41,7 +41,7 @@ const TESTIMONIALS: Testimonial[] = [
     procedure: 'Minimally Invasive Parathyroidectomy (MIP)',
     stars: 5,
     quote: 'My severe bone pain and recurring kidney stones vanished after this targeted surgery.',
-    story: 'For 3 years, I suffered from severe body aches, high calcium, and multiple kidney stone hospitalizations. Dr. Adarsh correctly identified a solitary parathyroid adenoma on Sestamibi scan and removed it through a tiny 2 cm incision in Chennai. My calcium dropped from 11.4 to 9.2 immediately. I feel 10 years younger.',
+    story: 'For 3 years, I suffered from severe body aches, high calcium, and multiple kidney stone hospitalizations. Dr. Aadarsh correctly identified a solitary parathyroid adenoma on Sestamibi scan and removed it through a tiny 2 cm incision in Chennai. My calcium dropped from 11.4 to 9.2 immediately. I feel 10 years younger.',
     date: 'December 2025'
   },
   {
@@ -51,7 +51,7 @@ const TESTIMONIALS: Testimonial[] = [
     procedure: 'Oncoplastic Breast Conservation Surgery',
     stars: 5,
     quote: 'As a fellow doctor, I deeply respect his oncoplastic surgical precision.',
-    story: 'When I discovered a firm breast lump, I consulted Dr. Adarsh. He performed a core biopsy and then a wide local excision with level-1 oncoplastic remodeling. He achieved tumor-free margins while preserving the natural shape and symmetry of my breast. His surgical judgment and bedside empathy are exemplary.',
+    story: 'When I discovered a firm breast lump, I consulted Dr. Aadarsh. He performed a core biopsy and then a wide local excision with level-1 oncoplastic remodeling. He achieved tumor-free margins while preserving the natural shape and symmetry of my breast. His surgical judgment and bedside empathy are exemplary.',
     date: 'November 2025'
   }
 ];

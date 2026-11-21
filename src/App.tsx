@@ -13,8 +13,8 @@ import ScarlessComparison from './components/ScarlessComparison';
 import SymptomChecker from './components/SymptomChecker';
 import PatientTestimonials from './components/PatientTestimonials';
 
-const SYSTEM_PROMPT = `You are the AI Clinical Assistant for Dr. Adarsh Raghavan's Endocrine & Breast Surgery practice in Chennai, Tamil Nadu, India.
-Dr. Adarsh Raghavan's Qualifications:
+const SYSTEM_PROMPT = `You are the AI Clinical Assistant for Dr. Aadarsh Raghavan's Endocrine & Breast Surgery practice in Chennai, Tamil Nadu, India.
+Dr. Aadarsh Raghavan's Qualifications:
 - MBBS (Annamalai University)
 - MS General Surgery (Government Kilpauk Medical College, Chennai)
 - M.Ch Endocrine Surgery (Madras Medical College - MMC, Chennai)
@@ -46,7 +46,7 @@ RULES:
 const INITIAL_CHAT_MESSAGES = [
   {
     role: 'bot' as const,
-    content: "Vanakkam & Welcome! I am Dr. Adarsh Raghavan's AI Health Assistant.\n\nI can help you with:\n• Thyroid swellings, nodules & cancer care\n• Scarless Thyroid Surgery (TOETVA)\n• Calcium, PTH & Parathyroid adenomas\n• Adrenal tumors & laparoscopic surgery\n• Breast lump assessment & oncoplasty\n• OPD timings & appointment booking at Paterson Cancer Center, SIMS Hospital & Billroth Hospitals (All by prior appointment)\n\nHow may I assist you today?"
+    content: "Vanakkam & Welcome! I am Dr. Aadarsh Raghavan's AI Health Assistant.\n\nI can help you with:\n• Thyroid swellings, nodules & cancer care\n• Scarless Thyroid Surgery (TOETVA)\n• Calcium, PTH & Parathyroid adenomas\n• Adrenal tumors & laparoscopic surgery\n• Breast lump assessment & oncoplasty\n• OPD timings & appointment booking at Paterson Cancer Center, SIMS Hospital & Billroth Hospitals (All by prior appointment)\n\nHow may I assist you today?"
   }
 ];
 
@@ -142,11 +142,11 @@ export default function App() {
     const input = userInput.toLowerCase();
 
     if (input.includes('book') || input.includes('appointment') || input.includes('timing') || input.includes('slot') || input.includes('time') || input.includes('consult')) {
-      return `To schedule an OPD consultation with Dr. Adarsh Raghavan (All consultations strictly by prior appointment):\n\n📍 Paterson Cancer Center (Vadapalani)\nMon – Sat: 6:00 PM – 9:00 PM (By Prior Appointment)\n\n📍 SIMS Hospital (Vadapalani)\nMon, Wed, Fri: 3:00 PM – 4:00 PM (By Prior Appointment)\n\n📍 Billroth Hospitals (R.A. Puram)\nMon – Sat: By Prior Appointment\n\n📞 Direct Desk: +91 98400 00000\n💬 WhatsApp: +91 98400 00000\n\nYou can also submit the booking form below on this website for an immediate callback.`;
+      return `To schedule an OPD consultation with Dr. Aadarsh Raghavan (All consultations strictly by prior appointment):\n\n📍 Paterson Cancer Center (Vadapalani)\nMon – Sat: 6:00 PM – 9:00 PM (By Prior Appointment)\n\n📍 SIMS Hospital (Vadapalani)\nMon, Wed, Fri: 3:00 PM – 4:00 PM (By Prior Appointment)\n\n📍 Billroth Hospitals (R.A. Puram)\nMon – Sat: By Prior Appointment\n\n📞 Direct Desk: +91 98400 00000\n💬 WhatsApp: +91 98400 00000\n\nYou can also submit the booking form below on this website for an immediate callback.`;
     }
 
     if (input.includes('scarless') || input.includes('toetva') || input.includes('baba') || input.includes('scar') || input.includes('transoral')) {
-      return `Scarless Thyroid Surgery (TOETVA):\n\n• Performed entirely through three tiny punctures inside the lower oral vestibule (behind lower lip).\n• Leaves ZERO visible neck scars on the skin.\n• 4K endoscopic magnification ensures supreme preservation of the Recurrent Laryngeal Nerve and parathyroid glands.\n• Ideal for nodules < 4-5 cm and select early malignancies.\n\nDr. Adarsh Raghavan is one of Chennai's foremost specialists in TOETVA scarless surgery.`;
+      return `Scarless Thyroid Surgery (TOETVA):\n\n• Performed entirely through three tiny punctures inside the lower oral vestibule (behind lower lip).\n• Leaves ZERO visible neck scars on the skin.\n• 4K endoscopic magnification ensures supreme preservation of the Recurrent Laryngeal Nerve and parathyroid glands.\n• Ideal for nodules < 4-5 cm and select early malignancies.\n\nDr. Aadarsh Raghavan is one of Chennai's foremost specialists in TOETVA scarless surgery.`;
     }
 
     if (input.includes('thyroid') || input.includes('nodule') || input.includes('goitre') || input.includes('goiter') || input.includes('fnac') || input.includes('tirads') || input.includes('தைராய்டு')) {
@@ -166,14 +166,14 @@ export default function App() {
     }
 
     if (input.includes('sims') || input.includes('paterson') || input.includes('billroth') || input.includes('vadapalani') || input.includes('puram') || input.includes('where') || input.includes('location')) {
-      return `Dr. Adarsh Raghavan's Consultation Locations in Chennai (All on Prior Appointment Basis):\n\n1. Paterson Cancer Center (Vadapalani)\n173, NSK Salai, Vadapalani, Chennai - 600026\nTimings: 6:00 PM – 9:00 PM (Mon–Sat, By Appointment)\n\n2. SIMS Hospital (SRM Institutes, Vadapalani)\n100 Feet Road, Vadapalani, Chennai - 600026\nTimings: 3:00 PM – 4:00 PM (Mon, Wed, Fri, By Appointment)\n\n3. Billroth Hospitals (R.A. Puram)\n43, 2nd Main Road, R.A. Puram, Chennai - 600028\nTimings: By Prior Appointment\n\nHelpline: +91 98400 00000`;
+      return `Dr. Aadarsh Raghavan's Consultation Locations in Chennai (All on Prior Appointment Basis):\n\n1. Paterson Cancer Center (Vadapalani)\n173, NSK Salai, Vadapalani, Chennai - 600026\nTimings: 6:00 PM – 9:00 PM (Mon–Sat, By Appointment)\n\n2. SIMS Hospital (SRM Institutes, Vadapalani)\n100 Feet Road, Vadapalani, Chennai - 600026\nTimings: 3:00 PM – 4:00 PM (Mon, Wed, Fri, By Appointment)\n\n3. Billroth Hospitals (R.A. Puram)\n43, 2nd Main Road, R.A. Puram, Chennai - 600028\nTimings: By Prior Appointment\n\nHelpline: +91 98400 00000`;
     }
 
     if (input.includes('hello') || input.includes('hi') || input.includes('vanakkam') || input.includes('namaste')) {
       return `Vanakkam! How can I assist you today? You can ask about:\n\n• Thyroid nodules & scarless surgery (TOETVA)\n• Parathyroid disorders & high calcium\n• Adrenal laparoscopic surgery\n• Breast lump evaluation & oncoplasty\n• Booking an OPD appointment at Paterson Cancer Center, SIMS Hospital, or Billroth RA Puram`;
     }
 
-    return `Dr. Adarsh Raghavan (MBBS, MS, MCh Endocrine Surgery, MMC Chennai) specializes in:\n\n🦋 Thyroidectomy & Neck Dissection\n✨ Scarless TOETVA (No Neck Scar)\n🔘 Parathyroid MIP & High Calcium\n⚡ Laparoscopic Adrenalectomy\n🌸 Breast Conservation & Oncoplasty\n\n📍 Clinics: Paterson Cancer Center, SIMS Hospital & Billroth RA Puram (All by Prior Appointment)\n📞 Appointment Helpline: +91 98400 00000`;
+    return `Dr. Aadarsh Raghavan (MBBS, MS, MCh Endocrine Surgery, MMC Chennai) specializes in:\n\n🦋 Thyroidectomy & Neck Dissection\n✨ Scarless TOETVA (No Neck Scar)\n🔘 Parathyroid MIP & High Calcium\n⚡ Laparoscopic Adrenalectomy\n🌸 Breast Conservation & Oncoplasty\n\n📍 Clinics: Paterson Cancer Center, SIMS Hospital & Billroth RA Puram (All by Prior Appointment)\n📞 Appointment Helpline: +91 98400 00000`;
   };
 
   const handleSendMessage = async () => {
@@ -253,11 +253,11 @@ export default function App() {
           {/* Brand Seal */}
           <a href="#" className="flex items-center gap-3.5 group">
             <div className="w-12 h-12 rounded-2xl bg-[#0B2545] text-white flex items-center justify-center shadow-lg shadow-[#0B2545]/20 border-2 border-[#C5A059] group-hover:scale-105 transition-transform relative overflow-hidden flex-shrink-0">
-              <img src="/images/dr-adarsh-clinical.jpg" alt="Dr. Adarsh Raghavan" className="w-full h-full object-cover object-top" />
+              <img src="/images/dr-adarsh-clinical.jpg" alt="Dr. Aadarsh Raghavan" className="w-full h-full object-cover object-top" />
             </div>
             <div>
               <h1 className="font-serif font-bold text-base sm:text-xl text-[#0B2545] tracking-tight uppercase leading-tight group-hover:text-[#05668D] transition-colors">
-                Dr. Adarsh Raghavan
+                Dr. Aadarsh Raghavan
               </h1>
               <p className="text-[10px] sm:text-[11px] uppercase tracking-widest text-[#C5A059] font-bold">
                 MBBS, MS, MCh (Endocrine Surgery)
@@ -311,7 +311,7 @@ export default function App() {
             className="fixed inset-x-0 top-18 z-30 bg-white/98 backdrop-blur-lg border-b border-gray-200 shadow-xl p-6 md:hidden flex flex-col gap-4 font-sans text-sm font-bold uppercase tracking-wider"
           >
             <button onClick={() => scrollToSection('specialties')} className="py-2.5 text-left border-b border-gray-100">Specialties</button>
-            <button onClick={() => scrollToSection('about')} className="py-2.5 text-left border-b border-gray-100">About Dr. Adarsh</button>
+            <button onClick={() => scrollToSection('about')} className="py-2.5 text-left border-b border-gray-100">About Dr. Aadarsh</button>
             <button onClick={() => scrollToSection('patient-hub')} className="py-2.5 text-left border-b border-gray-100">Patient Hub</button>
             <button onClick={() => scrollToSection('gallery')} className="py-2.5 text-left border-b border-gray-100">Surgical Gallery</button>
             <button onClick={() => scrollToSection('locations')} className="py-2.5 text-left border-b border-gray-100">Clinics (Vadapalani & R.A. Puram)</button>
@@ -424,7 +424,7 @@ export default function App() {
                 <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-slate-100 aspect-4/5 relative z-10 card-shadow">
                   <img
                     src="/images/hero-photo.jpg"
-                    alt="Dr. Adarsh Raghavan - Consultant Endocrine Surgeon"
+                    alt="Dr. Aadarsh Raghavan - Consultant Endocrine Surgeon"
                     className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B2545]/85 via-transparent to-transparent"></div>
@@ -435,7 +435,7 @@ export default function App() {
                       Consultant Endocrine Surgeon
                     </span>
                     <h3 className="font-serif font-bold text-2xl text-white leading-tight">
-                      Dr. Adarsh Raghavan
+                      Dr. Aadarsh Raghavan
                     </h3>
                     <p className="text-xs text-slate-200 mt-1">
                       Paterson Cancer Center • SIMS Hospital • Billroth Hospitals, Chennai
@@ -580,7 +580,7 @@ export default function App() {
               <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-4/5 relative card-shadow">
                 <img
                   src="/images/about-photo.jpg"
-                  alt="Dr. Adarsh Raghavan - Academic Leadership"
+                  alt="Dr. Aadarsh Raghavan - Academic Leadership"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -605,7 +605,7 @@ export default function App() {
 
               <div className="space-y-5 text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
                 <p>
-                  <strong>Dr. Adarsh Raghavan</strong> is an accomplished Consultant Endocrine and Breast Surgeon who has dedicated his career to the delicate intersections of glandular surgery and cosmetic preservation. With his formal <strong>M.Ch super-specialty training from Madras Medical College (MMC)</strong>, he represents the pinnacle of specialized surgical expertise in Tamil Nadu.
+                  <strong>Dr. Aadarsh Raghavan</strong> is an accomplished Consultant Endocrine and Breast Surgeon who has dedicated his career to the delicate intersections of glandular surgery and cosmetic preservation. With his formal <strong>M.Ch super-specialty training from Madras Medical College (MMC)</strong>, he represents the pinnacle of specialized surgical expertise in Tamil Nadu.
                 </p>
                 <p>
                   Prior to his M.Ch, he completed his Master of Surgery (MS) in General Surgery from Government Kilpauk Medical College, Chennai, and his MBBS from Rajah Muthiah Medical College, Annamalai University.
@@ -1167,7 +1167,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-center md:text-left">
             <h4 className="font-serif font-bold text-white text-base tracking-wide uppercase">
-              Dr. Adarsh Raghavan
+              Dr. Aadarsh Raghavan
             </h4>
             <p className="text-xs text-[#C5A059] font-bold uppercase tracking-wider mt-1">
               MBBS, MS, M.Ch (Endocrine Surgery) | MMC Chennai
@@ -1188,7 +1188,7 @@ export default function App() {
           </div>
 
           <div className="text-center md:text-right text-[11px] text-slate-400">
-            <p>© 2026 DR. ADARSH RAGHAVAN ACADEMIC PRACTICE</p>
+            <p>© 2026 DR. AADARSH RAGHAVAN ACADEMIC PRACTICE</p>
             <p className="mt-1">PIONEERING PRECISION IN ENDOCRINE & BREAST SURGERY</p>
           </div>
         </div>
@@ -1207,10 +1207,10 @@ export default function App() {
             <div className="bg-[#0B2545] text-white p-4.5 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-2xl overflow-hidden border border-[#C5A059]/50 shadow-xs flex-shrink-0 bg-white">
-                  <img src="/images/dr-adarsh-clinical.jpg" alt="Dr. Adarsh Raghavan" className="w-full h-full object-cover object-top" />
+                  <img src="/images/dr-adarsh-clinical.jpg" alt="Dr. Aadarsh Raghavan" className="w-full h-full object-cover object-top" />
                 </div>
                 <div>
-                  <h4 className="font-serif font-bold text-sm text-white">Dr. Adarsh's Assistant</h4>
+                  <h4 className="font-serif font-bold text-sm text-white">Dr. Aadarsh's Assistant</h4>
                   <p className="text-[11px] text-[#C5A059] font-bold">
                     Endocrine & Breast Practice • Chennai
                   </p>
@@ -1315,7 +1315,7 @@ export default function App() {
           <X size={24} />
         ) : (
           <div className="relative w-full h-full flex items-center justify-center">
-            <img src="/images/dr-adarsh-clinical.jpg" alt="Dr. Adarsh AI" className="w-full h-full object-cover object-top" />
+            <img src="/images/dr-adarsh-clinical.jpg" alt="Dr. Aadarsh AI" className="w-full h-full object-cover object-top" />
             <span className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-white shadow-xs"></span>
           </div>
         )}

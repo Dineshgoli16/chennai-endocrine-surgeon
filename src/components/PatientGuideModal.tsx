@@ -33,7 +33,7 @@ export const CLINICAL_GUIDES: Record<string, GuideContent> = {
       'Ultrasound-guided FNAC (Bethesda System reporting)',
       'Serum Calcitonin (if medullary thyroid carcinoma is suspected)'
     ],
-    surgicalAdvancement: 'Dr. Adarsh Raghavan employs intraoperative nerve monitoring (IONM) to safeguard the Recurrent Laryngeal Nerve and parathyroid preservation protocols, ensuring safe surgery with minimal post-operative discomfort.',
+    surgicalAdvancement: 'Dr. Aadarsh Raghavan employs intraoperative nerve monitoring (IONM) to safeguard the Recurrent Laryngeal Nerve and parathyroid preservation protocols, ensuring safe surgery with minimal post-operative discomfort.',
     whenToConsult: [
       'Visible swelling or lump at the front/base of the neck',
       'Unexplained hoarseness of voice or persistent throat tickle',
@@ -58,7 +58,7 @@ export const CLINICAL_GUIDES: Record<string, GuideContent> = {
       'FNAC confirmation of benign nodule, follicular lesion, or early well-differentiated papillary thyroid microcarcinoma',
       'Assessment of oral hygiene and absence of neck irradiation history'
     ],
-    surgicalAdvancement: 'Dr. Adarsh Raghavan has specialized training in scarless endoscopic endocrine procedures, offering patients an optimal fusion of rigorous oncological safety and pristine cosmetic satisfaction.',
+    surgicalAdvancement: 'Dr. Aadarsh Raghavan has specialized training in scarless endoscopic endocrine procedures, offering patients an optimal fusion of rigorous oncological safety and pristine cosmetic satisfaction.',
     whenToConsult: [
       'Patients seeking thyroid surgery without wanting a visible collar scar on the neck',
       'Professionals, young adults, and individuals prone to keloid/hypertrophic scarring',
@@ -83,7 +83,7 @@ export const CLINICAL_GUIDES: Record<string, GuideContent> = {
       'Dual-phase 99mTc-Sestamibi SPECT-CT scan',
       'High-resolution 4D-CT of the neck / parathyroid ultrasound'
     ],
-    surgicalAdvancement: 'Dr. Adarsh Raghavan utilizes focused parathyroidectomy with intraoperative PTH monitoring and gamma probe localization, drastically minimizing operative time and tissue trauma.',
+    surgicalAdvancement: 'Dr. Aadarsh Raghavan utilizes focused parathyroidectomy with intraoperative PTH monitoring and gamma probe localization, drastically minimizing operative time and tissue trauma.',
     whenToConsult: [
       'Routine blood checkup showing elevated Serum Calcium (> 10.2 mg/dL)',
       'Recurrent kidney stones (nephrolithiasis) or nephrocalcinosis',
@@ -108,7 +108,7 @@ export const CLINICAL_GUIDES: Record<string, GuideContent> = {
       'Post-operative vocal assessment and fiberoptic laryngoscopy',
       'Dedicated neuromonitoring endotracheal tube placement with electrode sensors aligned to the vocal cords'
     ],
-    surgicalAdvancement: 'At SIMS Hospital, Paterson Cancer Center, and Billroth Hospitals, Dr. Adarsh Raghavan incorporates dedicated IONM technology for every complex, reoperative, and thyroid malignancy case to ensure maximum phonatory preservation.',
+    surgicalAdvancement: 'At SIMS Hospital, Paterson Cancer Center, and Billroth Hospitals, Dr. Aadarsh Raghavan incorporates dedicated IONM technology for every complex, reoperative, and thyroid malignancy case to ensure maximum phonatory preservation.',
     whenToConsult: [
       'Singers, teachers, lecturers, and voice professionals undergoing thyroid surgery',
       'Patients with large goitres extending deep into the thoracic inlet (retrosternal goitre)',
@@ -132,7 +132,7 @@ export const CLINICAL_GUIDES: Record<string, GuideContent> = {
       'Digital Bilateral Mammogram with 3D Tomosynthesis (age > 40) or Breast Ultrasound (age < 40)',
       'Ultrasound-guided Core Needle Biopsy (CNB) with receptor status (ER, PR, HER2-neu, Ki-67)'
     ],
-    surgicalAdvancement: 'Dr. Adarsh Raghavan specializes in level 1 and level 2 oncoplastic remodeling, nipple-sparing mastectomies, and scar-hidden incisions around the periareolar and inframammary margins.',
+    surgicalAdvancement: 'Dr. Aadarsh Raghavan specializes in level 1 and level 2 oncoplastic remodeling, nipple-sparing mastectomies, and scar-hidden incisions around the periareolar and inframammary margins.',
     whenToConsult: [
       'Any painless, firm, or new lump in either breast or underarm armpit',
       'Spontaneous blood-stained or clear watery nipple discharge',
@@ -225,7 +225,7 @@ export default function PatientGuideModal({ guideId, onClose, onBookClick }: Pat
             {/* Surgical Edge */}
             <div className="border-l-4 border-[#C5A059] pl-4 py-2 bg-[#FDF9F0] rounded-r-xl">
               <h4 className="text-xs font-bold uppercase tracking-widest text-[#0B2545] mb-1">
-                Surgical Precision by Dr. Adarsh Raghavan
+                Surgical Precision by Dr. Aadarsh Raghavan
               </h4>
               <p className="text-xs sm:text-sm text-slate-800 italic">
                 {guide.surgicalAdvancement}

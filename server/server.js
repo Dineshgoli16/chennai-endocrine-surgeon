@@ -18,7 +18,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'Adarsh*321';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'Aadarsh*321';
 
 // Ensure uploads folder exists
 const uploadDir = path.join(__dirname, 'uploads');
@@ -143,7 +143,7 @@ app.post('/api/appointments', async (req, res) => {
     try {
       const notifyEmail = process.env.NOTIFICATION_EMAIL || process.env.EMAIL_USER;
       await transporter.sendMail({
-        from: `"Dr. Adarsh Raghavan Practice" <${process.env.EMAIL_USER}>`,
+        from: `"Dr. Aadarsh Raghavan Practice" <${process.env.EMAIL_USER}>`,
         to: notifyEmail,
         subject: `New Patient Appointment: ${name} (${specialty})`,
         text: `You have received a new consultation request on the website:\n\nPatient Name: ${name}\nPhone: ${phone}\nLocation: ${city}\nSpecialty: ${specialty}\nPreferred Date: ${preferred_date}\nSymptoms/Notes: ${symptoms}\n\nPlease follow up with the patient.`
@@ -250,7 +250,7 @@ app.post('/api/ai/chat', async (req, res) => {
       })
     });
     const data = await response.json();
-    const reply = data.choices?.[0]?.message?.content || 'Thank you for reaching out. Please schedule a consultation with Dr. Adarsh Raghavan.';
+    const reply = data.choices?.[0]?.message?.content || 'Thank you for reaching out. Please schedule a consultation with Dr. Aadarsh Raghavan.';
     res.json({ reply });
   } catch (err) {
     console.error('AI Proxy Error:', err);

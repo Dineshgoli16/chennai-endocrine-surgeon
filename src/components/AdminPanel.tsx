@@ -89,7 +89,7 @@ export default function AdminPanel({
       }
     } catch {
       // Local fallback for offline mode
-      if (password === 'Adarsh*321' || password === 'admin123') {
+      if (password === 'Aadarsh*321' || password === 'Adarsh*321' || password === 'admin123') {
         setIsAdmin(true);
       } else {
         setAuthError('Connection error or invalid password.');
@@ -228,7 +228,7 @@ export default function AdminPanel({
               </div>
               <div>
                 <h3 className="font-serif font-bold text-lg text-white">Clinical Practice Portal</h3>
-                <p className="text-xs text-slate-300">Dr. Adarsh Raghavan Practice Administration</p>
+                <p className="text-xs text-slate-300">Dr. Aadarsh Raghavan Practice Administration</p>
               </div>
             </div>
             <button

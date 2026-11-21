@@ -66,7 +66,7 @@ const DEFAULT_CLINICAL_CASES: DefaultCase[] = [
     type: 'image',
     imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
     tag: 'International Honor',
-    clinicalNote: 'Prestigious Travel Grant Award presented to Dr. Adarsh Raghavan for peer-reviewed research presentation on advanced surgical techniques in endocrine tumors at the international congress.'
+    clinicalNote: 'Prestigious Travel Grant Award presented to Dr. Aadarsh Raghavan for peer-reviewed research presentation on advanced surgical techniques in endocrine tumors at the international congress.'
   }
 ];
 
@@ -118,7 +118,7 @@ export default function Gallery({ onOpenAdmin, refreshTrigger }: GalleryProps) {
     type: (m.type.includes('video') ? 'video' : 'image') as 'image' | 'video',
     imageUrl: `/uploads/${m.filename}`,
     tag: 'Verified Case',
-    clinicalNote: 'Clinical case documentation managed via the Dr. Adarsh Raghavan Practice Portal.'
+    clinicalNote: 'Clinical case documentation managed via the Dr. Aadarsh Raghavan Practice Portal.'
   }));
 
   const allCases = [...dynamicCases, ...DEFAULT_CLINICAL_CASES];
