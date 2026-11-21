@@ -30,7 +30,7 @@ SPECIALTIES & PROCEDURES:
 5. Breast Surgery & Oncoplasty: Breast conservation surgery (BCS), sentinel lymph node biopsy, oncoplastic remodeling, and benign lump excision.
 
 HOSPITAL CONSULTATION LOCATIONS IN CHENNAI (ALL ON PRIOR APPOINTMENT BASIS):
-- Paterson Cancer Center: 173, NSK Salai, Vadapalani, Chennai - 600026. Timings: Mon–Sat: 6:00 PM – 9:00 PM (By Prior Appointment). Direct Appointment Desk: 7550221119 / +91 75502 21119.
+- Paterson Cancer Center: 175, NSK Salai, Vadapalani, Chennai - 600026. Timings: Mon–Sat: 6:00 PM – 9:00 PM (By Prior Appointment). Direct Appointment Desk: 7550221119 / +91 75502 21119.
 - SIMS Hospital (SRM Institutes for Medical Science): Jawaharlal Nehru Salai, 100 Feet Road, Vadapalani, Chennai - 600026. Timings: Mon, Wed, Fri: 3:00 PM – 4:00 PM (By Prior Appointment).
 - Billroth Hospitals: 43, 2nd Main Road, Raja Annamalai Puram (R.A. Puram), Chennai - 600028. Timings: By Prior Appointment.
 - Emergency Helpline: +91 98400 00000 | WhatsApp: +91 98400 00000.
@@ -166,7 +166,7 @@ export default function App() {
     }
 
     if (input.includes('sims') || input.includes('paterson') || input.includes('billroth') || input.includes('vadapalani') || input.includes('puram') || input.includes('where') || input.includes('location')) {
-      return `Dr. Aadarsh Raghavan's Consultation Locations in Chennai (All on Prior Appointment Basis):\n\n1. Paterson Cancer Center (Vadapalani)\n173, NSK Salai, Vadapalani, Chennai - 600026\nTimings: 6:00 PM – 9:00 PM (Mon–Sat, By Appointment)\n📞 Direct Desk: +91 75502 21119\n\n2. SIMS Hospital (SRM Institutes, Vadapalani)\n100 Feet Road, Vadapalani, Chennai - 600026\nTimings: 3:00 PM – 4:00 PM (Mon, Wed, Fri, By Appointment)\n\n3. Billroth Hospitals (R.A. Puram)\n43, 2nd Main Road, R.A. Puram, Chennai - 600028\nTimings: By Prior Appointment\n\nCentral Helpline: +91 98400 00000`;
+      return `Dr. Aadarsh Raghavan's Consultation Locations in Chennai (All on Prior Appointment Basis):\n\n1. Paterson Cancer Center (Vadapalani)\n175, NSK Salai, Vadapalani, Chennai - 600026\nTimings: 6:00 PM – 9:00 PM (Mon–Sat, By Appointment)\n📞 Direct Desk: +91 75502 21119\n\n2. SIMS Hospital (SRM Institutes, Vadapalani)\n100 Feet Road, Vadapalani, Chennai - 600026\nTimings: 3:00 PM – 4:00 PM (Mon, Wed, Fri, By Appointment)\n\n3. Billroth Hospitals (R.A. Puram)\n43, 2nd Main Road, R.A. Puram, Chennai - 600028\nTimings: By Prior Appointment\n\nCentral Helpline: +91 98400 00000`;
     }
 
     if (input.includes('hello') || input.includes('hi') || input.includes('vanakkam') || input.includes('namaste')) {
@@ -820,7 +820,7 @@ export default function App() {
                   </div>
 
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 font-sans">
-                    173, NSK Salai, Vadapalani (Vijaya Health Centre premises), Chennai, Tamil Nadu - 600026
+                    175, NSK Salai, Vadapalani (Vijaya Health Centre premises), Chennai, Tamil Nadu - 600026
                   </p>
 
                   <div className="p-3.5 rounded-2xl bg-white border border-gray-100 flex items-center gap-2.5 text-xs font-bold text-[#0B2545] mb-2.5 shadow-xs">
