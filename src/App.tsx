@@ -30,7 +30,7 @@ SPECIALTIES & PROCEDURES:
 5. Breast Surgery & Oncoplasty: Breast conservation surgery (BCS), sentinel lymph node biopsy, oncoplastic remodeling, and benign lump excision.
 
 HOSPITAL CONSULTATION LOCATIONS IN CHENNAI (ALL ON PRIOR APPOINTMENT BASIS):
-- Paterson Cancer Center: 173, NSK Salai, Vadapalani, Chennai - 600026. Timings: Mon–Sat: 6:00 PM – 9:00 PM (By Prior Appointment).
+- Paterson Cancer Center: 173, NSK Salai, Vadapalani, Chennai - 600026. Timings: Mon–Sat: 6:00 PM – 9:00 PM (By Prior Appointment). Direct Appointment Desk: 7550221119 / +91 75502 21119.
 - SIMS Hospital (SRM Institutes for Medical Science): Jawaharlal Nehru Salai, 100 Feet Road, Vadapalani, Chennai - 600026. Timings: Mon, Wed, Fri: 3:00 PM – 4:00 PM (By Prior Appointment).
 - Billroth Hospitals: 43, 2nd Main Road, Raja Annamalai Puram (R.A. Puram), Chennai - 600028. Timings: By Prior Appointment.
 - Emergency Helpline: +91 98400 00000 | WhatsApp: +91 98400 00000.
@@ -40,13 +40,13 @@ RULES:
 2. Provide accurate educational guidance on thyroid, parathyroid, scarless TOETVA, adrenal, and breast conditions.
 3. Understand Tamil medical terms when patients type them (e.g., 'தைராய்டு', 'கழுத்து கட்டி', 'மார் கட்டி').
 4. Never make a definitive personal diagnosis; recommend booking a clinical consultation.
-5. Provide clear hospital timing and booking details: Paterson Cancer Center (Mon-Sat 6-9 PM), SIMS Hospital (Mon/Wed/Fri 3-4 PM), and Billroth Hospitals RA Puram (By Appointment). Remind patients that ALL consultations across all centers are strictly on an appointment basis.
+5. Provide clear hospital timing and booking details: Paterson Cancer Center (Mon-Sat 6-9 PM | Direct Desk: 7550221119), SIMS Hospital (Mon/Wed/Fri 3-4 PM), and Billroth Hospitals RA Puram (By Appointment). Remind patients that ALL consultations across all centers are strictly on an appointment basis.
 6. Keep responses under 180 words with clear bullet points.`;
 
 const INITIAL_CHAT_MESSAGES = [
   {
     role: 'bot' as const,
-    content: "Vanakkam & Welcome! I am Dr. Aadarsh Raghavan's AI Health Assistant.\n\nI can help you with:\n• Thyroid swellings, nodules & cancer care\n• Scarless Thyroid Surgery (TOETVA)\n• Calcium, PTH & Parathyroid adenomas\n• Adrenal tumors & laparoscopic surgery\n• Breast lump assessment & oncoplasty\n• OPD timings & appointment booking at Paterson Cancer Center, SIMS Hospital & Billroth Hospitals (All by prior appointment)\n\nHow may I assist you today?"
+    content: "Vanakkam & Welcome! I am Dr. Aadarsh Raghavan's AI Health Assistant.\n\nI can help you with:\n• Thyroid swellings, nodules & cancer care\n• Scarless Thyroid Surgery (TOETVA)\n• Calcium, PTH & Parathyroid adenomas\n• Adrenal tumors & laparoscopic surgery\n• Breast lump assessment & oncoplasty\n• OPD timings & appointment booking at Paterson Cancer Center (Desk: 75502 21119), SIMS Hospital & Billroth Hospitals (All by prior appointment)\n\nHow may I assist you today?"
   }
 ];
 
@@ -66,13 +66,13 @@ export default function App() {
   const [galleryRefresh, setGalleryRefresh] = useState(0);
 
   // Announcement
-  const [announcement, setAnnouncement] = useState('Consultations at Paterson Cancer Center (Mon-Sat 6-9 PM), SIMS Hospital (Mon/Wed/Fri 3-4 PM) & Billroth RA Puram — All On Prior Appointment Basis');
+  const [announcement, setAnnouncement] = useState('Consultations at Paterson Cancer Center (Mon-Sat 6-9 PM | Desk: 7550221119), SIMS Hospital (Mon/Wed/Fri 3-4 PM) & Billroth RA Puram — All On Prior Appointment Basis');
 
   // Appointment Form
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    city: 'Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM)',
+    city: 'Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM | Desk: 7550221119)',
     specialty: 'Thyroid / Parathyroid',
     preferred_date: '',
     symptoms: ''
@@ -120,7 +120,7 @@ export default function App() {
         setFormData({
           name: '',
           phone: '',
-          city: 'Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM)',
+          city: 'Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM | Desk: 7550221119)',
           specialty: 'Thyroid / Parathyroid',
           preferred_date: '',
           symptoms: ''
@@ -142,7 +142,7 @@ export default function App() {
     const input = userInput.toLowerCase();
 
     if (input.includes('book') || input.includes('appointment') || input.includes('timing') || input.includes('slot') || input.includes('time') || input.includes('consult')) {
-      return `To schedule an OPD consultation with Dr. Aadarsh Raghavan (All consultations strictly by prior appointment):\n\n📍 Paterson Cancer Center (Vadapalani)\nMon – Sat: 6:00 PM – 9:00 PM (By Prior Appointment)\n\n📍 SIMS Hospital (Vadapalani)\nMon, Wed, Fri: 3:00 PM – 4:00 PM (By Prior Appointment)\n\n📍 Billroth Hospitals (R.A. Puram)\nMon – Sat: By Prior Appointment\n\n📞 Direct Desk: +91 98400 00000\n💬 WhatsApp: +91 98400 00000\n\nYou can also submit the booking form below on this website for an immediate callback.`;
+      return `To schedule an OPD consultation with Dr. Aadarsh Raghavan (All consultations strictly by prior appointment):\n\n📍 Paterson Cancer Center (Vadapalani)\nMon – Sat: 6:00 PM – 9:00 PM\n📞 Direct Desk: +91 75502 21119\n\n📍 SIMS Hospital (Vadapalani)\nMon, Wed, Fri: 3:00 PM – 4:00 PM (By Prior Appointment)\n\n📍 Billroth Hospitals (R.A. Puram)\nMon – Sat: By Prior Appointment\n\n📞 Central Helpline: +91 98400 00000\n💬 WhatsApp: +91 98400 00000\n\nYou can also submit the booking form below on this website for an immediate callback.`;
     }
 
     if (input.includes('scarless') || input.includes('toetva') || input.includes('baba') || input.includes('scar') || input.includes('transoral')) {
@@ -150,7 +150,7 @@ export default function App() {
     }
 
     if (input.includes('thyroid') || input.includes('nodule') || input.includes('goitre') || input.includes('goiter') || input.includes('fnac') || input.includes('tirads') || input.includes('தைராய்டு')) {
-      return `Comprehensive Thyroid Care:\n\n• High-resolution Ultrasound with TIRADS classification\n• USG-guided FNAC (Bethesda Reporting)\n• Total & Hemi-thyroidectomy with Central/Lateral Neck Dissection\n• Retrosternal Goitre excision without chest bone splitting\n• Dedicated Intraoperative Neuromonitoring (IONM) to protect singing & speaking voice.\n\nConsult at Paterson Cancer Center, SIMS Hospital or Billroth RA Puram: +91 98400 00000.`;
+      return `Comprehensive Thyroid Care:\n\n• High-resolution Ultrasound with TIRADS classification\n• USG-guided FNAC (Bethesda Reporting)\n• Total & Hemi-thyroidectomy with Central/Lateral Neck Dissection\n• Retrosternal Goitre excision without chest bone splitting\n• Dedicated Intraoperative Neuromonitoring (IONM) to protect singing & speaking voice.\n\nConsult at Paterson Cancer Center (Desk: 7550221119), SIMS Hospital or Billroth RA Puram: +91 98400 00000.`;
     }
 
     if (input.includes('parathyroid') || input.includes('calcium') || input.includes('pth') || input.includes('stone') || input.includes('sestamibi')) {
@@ -166,7 +166,7 @@ export default function App() {
     }
 
     if (input.includes('sims') || input.includes('paterson') || input.includes('billroth') || input.includes('vadapalani') || input.includes('puram') || input.includes('where') || input.includes('location')) {
-      return `Dr. Aadarsh Raghavan's Consultation Locations in Chennai (All on Prior Appointment Basis):\n\n1. Paterson Cancer Center (Vadapalani)\n173, NSK Salai, Vadapalani, Chennai - 600026\nTimings: 6:00 PM – 9:00 PM (Mon–Sat, By Appointment)\n\n2. SIMS Hospital (SRM Institutes, Vadapalani)\n100 Feet Road, Vadapalani, Chennai - 600026\nTimings: 3:00 PM – 4:00 PM (Mon, Wed, Fri, By Appointment)\n\n3. Billroth Hospitals (R.A. Puram)\n43, 2nd Main Road, R.A. Puram, Chennai - 600028\nTimings: By Prior Appointment\n\nHelpline: +91 98400 00000`;
+      return `Dr. Aadarsh Raghavan's Consultation Locations in Chennai (All on Prior Appointment Basis):\n\n1. Paterson Cancer Center (Vadapalani)\n173, NSK Salai, Vadapalani, Chennai - 600026\nTimings: 6:00 PM – 9:00 PM (Mon–Sat, By Appointment)\n📞 Direct Desk: +91 75502 21119\n\n2. SIMS Hospital (SRM Institutes, Vadapalani)\n100 Feet Road, Vadapalani, Chennai - 600026\nTimings: 3:00 PM – 4:00 PM (Mon, Wed, Fri, By Appointment)\n\n3. Billroth Hospitals (R.A. Puram)\n43, 2nd Main Road, R.A. Puram, Chennai - 600028\nTimings: By Prior Appointment\n\nCentral Helpline: +91 98400 00000`;
     }
 
     if (input.includes('hello') || input.includes('hi') || input.includes('vanakkam') || input.includes('namaste')) {
@@ -823,10 +823,21 @@ export default function App() {
                     173, NSK Salai, Vadapalani (Vijaya Health Centre premises), Chennai, Tamil Nadu - 600026
                   </p>
 
-                  <div className="p-3.5 rounded-2xl bg-white border border-gray-100 flex items-center gap-2.5 text-xs font-bold text-[#0B2545] mb-3 shadow-xs">
+                  <div className="p-3.5 rounded-2xl bg-white border border-gray-100 flex items-center gap-2.5 text-xs font-bold text-[#0B2545] mb-2.5 shadow-xs">
                     <Clock size={15} className="text-[#C5A059] flex-shrink-0" />
                     <span>Mon – Sat: 6:00 PM – 9:00 PM</span>
                   </div>
+
+                  <a
+                    href="tel:+917550221119"
+                    className="p-3.5 rounded-2xl bg-[#05668D]/10 hover:bg-[#05668D]/15 border border-[#05668D]/20 flex items-center justify-between text-xs font-bold text-[#0B2545] mb-3 transition-colors group"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <Phone size={15} className="text-[#05668D]" />
+                      <span>Direct Desk: <strong className="text-[#05668D]">75502 21119</strong></span>
+                    </div>
+                    <span className="text-[10px] uppercase tracking-wider text-[#05668D] font-bold group-hover:underline">Call Now</span>
+                  </a>
 
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-bold uppercase tracking-wider mb-5">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
@@ -847,14 +858,22 @@ export default function App() {
                   </div>
                 </div>
 
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Paterson+Cancer+Center,+Vadapalani,+Chennai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3 rounded-xl bg-white hover:bg-[#0B2545] text-[#0B2545] hover:text-white border border-gray-200 font-bold text-xs uppercase tracking-wider shadow-xs transition-colors flex items-center justify-center gap-2"
-                >
-                  Get Driving Directions <ExternalLink size={13} />
-                </a>
+                <div className="grid grid-cols-2 gap-2.5">
+                  <a
+                    href="tel:+917550221119"
+                    className="py-3 rounded-xl bg-[#0B2545] hover:bg-[#13315C] text-white font-bold text-xs uppercase tracking-wider shadow-xs transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    <Phone size={13} className="text-[#C5A059]" /> 75502 21119
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Paterson+Cancer+Center,+Vadapalani,+Chennai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-3 rounded-xl bg-white hover:bg-[#0B2545] text-[#0B2545] hover:text-white border border-gray-200 font-bold text-xs uppercase tracking-wider shadow-xs transition-colors flex items-center justify-center gap-1.5"
+                  >
+                    Directions <ExternalLink size={13} />
+                  </a>
+                </div>
               </div>
 
               {/* Center 2: SIMS Hospital */}
@@ -988,6 +1007,23 @@ export default function App() {
 
                 <div className="space-y-4">
                   <a
+                    href="tel:+917550221119"
+                    className="flex items-center gap-4 p-4 rounded-2xl bg-[#FAF9F6] border border-[#05668D]/30 hover:border-[#05668D] transition-all group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-[#05668D]/10 text-[#05668D] group-hover:bg-[#05668D] group-hover:text-white flex items-center justify-center shadow-xs transition-colors">
+                      <Phone size={20} className="text-[#05668D] group-hover:text-white" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase font-bold text-[#05668D] tracking-wider">
+                        Paterson Cancer Center Direct Desk
+                      </p>
+                      <p className="font-bold text-[#0B2545] text-base group-hover:text-[#05668D] transition-colors">
+                        +91 75502 21119
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
                     href="tel:+919840000000"
                     className="flex items-center gap-4 p-4 rounded-2xl bg-[#FAF9F6] border border-gray-100 hover:border-[#05668D] transition-all group"
                   >
@@ -996,7 +1032,7 @@ export default function App() {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
-                        Helpline / Booking Desk
+                        Central Helpline / Booking Desk
                       </p>
                       <p className="font-bold text-[#0B2545] text-base group-hover:text-[#05668D] transition-colors">
                         +91 98400 00000
@@ -1084,7 +1120,7 @@ export default function App() {
                           onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                           className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:outline-none focus:border-[#05668D] text-sm"
                         >
-                          <option>Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM)</option>
+                          <option>Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM | Desk: 7550221119)</option>
                           <option>SIMS Hospital, Vadapalani (Mon/Wed/Fri, 3 PM - 4 PM)</option>
                           <option>Billroth Hospitals, R.A. Puram (By Prior Appointment)</option>
                           <option>Online / Tele-consultation</option>
