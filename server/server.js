@@ -30,7 +30,7 @@ app.use('/uploads', express.static(uploadDir));
 // JSON database file for zero-config local/shared hosting
 const dbFile = path.join(__dirname, 'database.json');
 const initialDB = {
-  announcement: 'Now offering Specialized Endocrine & Scarless Thyroid (TOETVA) Clinics at SIMS Vadapalani & Lifeline Kilpauk',
+  announcement: 'Consultations at Paterson Cancer Center (Mon-Sat 6-9 PM), SIMS Hospital (Mon/Wed/Fri 3-4 PM) & Billroth RA Puram — All on Prior Appointment Basis',
   appointments: [],
   media: []
 };

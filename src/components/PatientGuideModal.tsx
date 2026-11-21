@@ -108,7 +108,7 @@ export const CLINICAL_GUIDES: Record<string, GuideContent> = {
       'Post-operative vocal assessment and fiberoptic laryngoscopy',
       'Dedicated neuromonitoring endotracheal tube placement with electrode sensors aligned to the vocal cords'
     ],
-    surgicalAdvancement: 'At SIMS and Lifeline Hospitals, Dr. Adarsh Raghavan incorporates dedicated IONM technology for every complex, reoperative, and thyroid malignancy case to ensure maximum phonatory preservation.',
+    surgicalAdvancement: 'At SIMS Hospital, Paterson Cancer Center, and Billroth Hospitals, Dr. Adarsh Raghavan incorporates dedicated IONM technology for every complex, reoperative, and thyroid malignancy case to ensure maximum phonatory preservation.',
     whenToConsult: [
       'Singers, teachers, lecturers, and voice professionals undergoing thyroid surgery',
       'Patients with large goitres extending deep into the thoracic inlet (retrosternal goitre)',

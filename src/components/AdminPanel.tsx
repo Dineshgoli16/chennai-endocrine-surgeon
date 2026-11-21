@@ -328,7 +328,7 @@ export default function AdminPanel({
                         value={announcementText}
                         onChange={(e) => setAnnouncementText(e.target.value)}
                         className="w-full p-4 rounded-xl border border-gray-200 focus:outline-none focus:border-[#05668D] text-sm"
-                        placeholder="e.g., Now offering OPD Consultations at SIMS Hospital Vadapalani & Lifeline Kilpauk | Scarless Endocrine Surgery Clinics Open"
+                        placeholder="e.g., Consultations at Paterson Cancer Center (6-9 PM Mon-Sat), SIMS Hospital (3-4 PM Mon/Wed/Fri) & Billroth RA Puram | By Prior Appointment"
                       />
                     </div>
                     {announcementMsg && (

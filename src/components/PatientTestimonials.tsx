@@ -41,7 +41,7 @@ const TESTIMONIALS: Testimonial[] = [
     procedure: 'Minimally Invasive Parathyroidectomy (MIP)',
     stars: 5,
     quote: 'My severe bone pain and recurring kidney stones vanished after this targeted surgery.',
-    story: 'For 3 years, I suffered from severe body aches, high calcium, and multiple kidney stone hospitalizations. Dr. Adarsh correctly identified a solitary parathyroid adenoma on Sestamibi scan and removed it through a tiny 2 cm incision at Lifeline Hospital. My calcium dropped from 11.4 to 9.2 immediately. I feel 10 years younger.',
+    story: 'For 3 years, I suffered from severe body aches, high calcium, and multiple kidney stone hospitalizations. Dr. Adarsh correctly identified a solitary parathyroid adenoma on Sestamibi scan and removed it through a tiny 2 cm incision in Chennai. My calcium dropped from 11.4 to 9.2 immediately. I feel 10 years younger.',
     date: 'December 2025'
   },
   {

@@ -29,9 +29,10 @@ SPECIALTIES & PROCEDURES:
 4. Adrenal Surgery: Laparoscopic & Retroperitoneoscopic Adrenalectomy for pheochromocytoma, Cushing's, Conn's syndrome, and incidentalomas.
 5. Breast Surgery & Oncoplasty: Breast conservation surgery (BCS), sentinel lymph node biopsy, oncoplastic remodeling, and benign lump excision.
 
-HOSPITAL CONSULTATION LOCATIONS IN CHENNAI:
-- SIMS Hospital (SRM Institutes for Medical Science): Jawaharlal Nehru Salai, 100 Feet Road, Vadapalani, Chennai - 600026. Timings: Mon–Sat: 10:00 AM – 3:00 PM.
-- Lifeline Multispeciality Hospitals: 47/3, New Avadi Road, Kilpauk, Chennai - 600010. Timings: Mon–Sat: 4:30 PM – 7:30 PM.
+HOSPITAL CONSULTATION LOCATIONS IN CHENNAI (ALL ON PRIOR APPOINTMENT BASIS):
+- Paterson Cancer Center: 173, NSK Salai, Vadapalani, Chennai - 600026. Timings: Mon–Sat: 6:00 PM – 9:00 PM (By Prior Appointment).
+- SIMS Hospital (SRM Institutes for Medical Science): Jawaharlal Nehru Salai, 100 Feet Road, Vadapalani, Chennai - 600026. Timings: Mon, Wed, Fri: 3:00 PM – 4:00 PM (By Prior Appointment).
+- Billroth Hospitals: 43, 2nd Main Road, Raja Annamalai Puram (R.A. Puram), Chennai - 600028. Timings: By Prior Appointment.
 - Emergency Helpline: +91 98400 00000 | WhatsApp: +91 98400 00000.
 
 RULES:
@@ -39,13 +40,13 @@ RULES:
 2. Provide accurate educational guidance on thyroid, parathyroid, scarless TOETVA, adrenal, and breast conditions.
 3. Understand Tamil medical terms when patients type them (e.g., 'தைராய்டு', 'கழுத்து கட்டி', 'மார் கட்டி').
 4. Never make a definitive personal diagnosis; recommend booking a clinical consultation.
-5. Provide clear hospital timing and booking details for SIMS Vadapalani and Lifeline Kilpauk.
+5. Provide clear hospital timing and booking details: Paterson Cancer Center (Mon-Sat 6-9 PM), SIMS Hospital (Mon/Wed/Fri 3-4 PM), and Billroth Hospitals RA Puram (By Appointment). Remind patients that ALL consultations across all centers are strictly on an appointment basis.
 6. Keep responses under 180 words with clear bullet points.`;
 
 const INITIAL_CHAT_MESSAGES = [
   {
     role: 'bot' as const,
-    content: "Vanakkam & Welcome! I am Dr. Adarsh Raghavan's AI Health Assistant.\n\nI can help you with:\n• Thyroid swellings, nodules & cancer care\n• Scarless Thyroid Surgery (TOETVA)\n• Calcium, PTH & Parathyroid adenomas\n• Adrenal tumors & laparoscopic surgery\n• Breast lump assessment & oncoplasty\n• OPD timings & appointment booking at SIMS Hospital (Vadapalani) & Lifeline (Kilpauk)\n\nHow may I assist you today?"
+    content: "Vanakkam & Welcome! I am Dr. Adarsh Raghavan's AI Health Assistant.\n\nI can help you with:\n• Thyroid swellings, nodules & cancer care\n• Scarless Thyroid Surgery (TOETVA)\n• Calcium, PTH & Parathyroid adenomas\n• Adrenal tumors & laparoscopic surgery\n• Breast lump assessment & oncoplasty\n• OPD timings & appointment booking at Paterson Cancer Center, SIMS Hospital & Billroth Hospitals (All by prior appointment)\n\nHow may I assist you today?"
   }
 ];
 
@@ -65,13 +66,13 @@ export default function App() {
   const [galleryRefresh, setGalleryRefresh] = useState(0);
 
   // Announcement
-  const [announcement, setAnnouncement] = useState('Now offering Specialized Endocrine & Scarless Thyroid (TOETVA) Clinics at SIMS Vadapalani & Lifeline Kilpauk');
+  const [announcement, setAnnouncement] = useState('Consultations at Paterson Cancer Center (Mon-Sat 6-9 PM), SIMS Hospital (Mon/Wed/Fri 3-4 PM) & Billroth RA Puram — All On Prior Appointment Basis');
 
   // Appointment Form
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    city: 'Chennai',
+    city: 'Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM)',
     specialty: 'Thyroid / Parathyroid',
     preferred_date: '',
     symptoms: ''
@@ -119,7 +120,7 @@ export default function App() {
         setFormData({
           name: '',
           phone: '',
-          city: 'Chennai',
+          city: 'Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM)',
           specialty: 'Thyroid / Parathyroid',
           preferred_date: '',
           symptoms: ''
@@ -141,7 +142,7 @@ export default function App() {
     const input = userInput.toLowerCase();
 
     if (input.includes('book') || input.includes('appointment') || input.includes('timing') || input.includes('slot') || input.includes('time') || input.includes('consult')) {
-      return `To schedule an OPD consultation with Dr. Adarsh Raghavan:\n\n📍 SIMS Hospital (Vadapalani)\nMon – Sat: 10:00 AM – 3:00 PM\n\n📍 Lifeline Multispeciality Hospitals (Kilpauk)\nMon – Sat: 4:30 PM – 7:30 PM\n\n📞 Direct Desk: +91 98400 00000\n💬 WhatsApp: +91 98400 00000\n\nYou can also submit the booking form below on this website for an immediate callback.`;
+      return `To schedule an OPD consultation with Dr. Adarsh Raghavan (All consultations strictly by prior appointment):\n\n📍 Paterson Cancer Center (Vadapalani)\nMon – Sat: 6:00 PM – 9:00 PM (By Prior Appointment)\n\n📍 SIMS Hospital (Vadapalani)\nMon, Wed, Fri: 3:00 PM – 4:00 PM (By Prior Appointment)\n\n📍 Billroth Hospitals (R.A. Puram)\nMon – Sat: By Prior Appointment\n\n📞 Direct Desk: +91 98400 00000\n💬 WhatsApp: +91 98400 00000\n\nYou can also submit the booking form below on this website for an immediate callback.`;
     }
 
     if (input.includes('scarless') || input.includes('toetva') || input.includes('baba') || input.includes('scar') || input.includes('transoral')) {
@@ -149,7 +150,7 @@ export default function App() {
     }
 
     if (input.includes('thyroid') || input.includes('nodule') || input.includes('goitre') || input.includes('goiter') || input.includes('fnac') || input.includes('tirads') || input.includes('தைராய்டு')) {
-      return `Comprehensive Thyroid Care:\n\n• High-resolution Ultrasound with TIRADS classification\n• USG-guided FNAC (Bethesda Reporting)\n• Total & Hemi-thyroidectomy with Central/Lateral Neck Dissection\n• Retrosternal Goitre excision without chest bone splitting\n• Dedicated Intraoperative Neuromonitoring (IONM) to protect singing & speaking voice.\n\nConsult at SIMS Vadapalani or Lifeline Kilpauk: +91 98400 00000.`;
+      return `Comprehensive Thyroid Care:\n\n• High-resolution Ultrasound with TIRADS classification\n• USG-guided FNAC (Bethesda Reporting)\n• Total & Hemi-thyroidectomy with Central/Lateral Neck Dissection\n• Retrosternal Goitre excision without chest bone splitting\n• Dedicated Intraoperative Neuromonitoring (IONM) to protect singing & speaking voice.\n\nConsult at Paterson Cancer Center, SIMS Hospital or Billroth RA Puram: +91 98400 00000.`;
     }
 
     if (input.includes('parathyroid') || input.includes('calcium') || input.includes('pth') || input.includes('stone') || input.includes('sestamibi')) {
@@ -164,15 +165,15 @@ export default function App() {
       return `Breast Surgery & Oncoplastic Care:\n\n• Triple Assessment Protocol: Clinical Exam + Digital Mammogram/USG + Core Biopsy\n• Breast Conservation Surgery (BCS): Preserves the natural breast while completely removing the tumor with clear margins.\n• Oncoplastic reconstruction to prevent tissue deformity\n• Sentinel Lymph Node Biopsy (SLNB) to spare underarm lymph nodes.\n\nSchedule evaluation: +91 98400 00000.`;
     }
 
-    if (input.includes('sims') || input.includes('vadapalani') || input.includes('lifeline') || input.includes('kilpauk') || input.includes('where') || input.includes('location')) {
-      return `Dr. Adarsh Raghavan's Practice Locations in Chennai:\n\n1. SIMS Hospital (SRM Institutes for Medical Science)\n100 Feet Road, Vadapalani, Chennai - 600026\nTimings: 10:00 AM – 3:00 PM (Mon-Sat)\n\n2. Lifeline Multispeciality Hospitals\nNew Avadi Road, Kilpauk, Chennai - 600010\nTimings: 4:30 PM – 7:30 PM (Mon-Sat)\n\nHelpline: +91 98400 00000`;
+    if (input.includes('sims') || input.includes('paterson') || input.includes('billroth') || input.includes('vadapalani') || input.includes('puram') || input.includes('where') || input.includes('location')) {
+      return `Dr. Adarsh Raghavan's Consultation Locations in Chennai (All on Prior Appointment Basis):\n\n1. Paterson Cancer Center (Vadapalani)\n173, NSK Salai, Vadapalani, Chennai - 600026\nTimings: 6:00 PM – 9:00 PM (Mon–Sat, By Appointment)\n\n2. SIMS Hospital (SRM Institutes, Vadapalani)\n100 Feet Road, Vadapalani, Chennai - 600026\nTimings: 3:00 PM – 4:00 PM (Mon, Wed, Fri, By Appointment)\n\n3. Billroth Hospitals (R.A. Puram)\n43, 2nd Main Road, R.A. Puram, Chennai - 600028\nTimings: By Prior Appointment\n\nHelpline: +91 98400 00000`;
     }
 
     if (input.includes('hello') || input.includes('hi') || input.includes('vanakkam') || input.includes('namaste')) {
-      return `Vanakkam! How can I assist you today? You can ask about:\n\n• Thyroid nodules & scarless surgery (TOETVA)\n• Parathyroid disorders & high calcium\n• Adrenal laparoscopic surgery\n• Breast lump evaluation & oncoplasty\n• Booking an OPD appointment at SIMS or Lifeline Hospitals`;
+      return `Vanakkam! How can I assist you today? You can ask about:\n\n• Thyroid nodules & scarless surgery (TOETVA)\n• Parathyroid disorders & high calcium\n• Adrenal laparoscopic surgery\n• Breast lump evaluation & oncoplasty\n• Booking an OPD appointment at Paterson Cancer Center, SIMS Hospital, or Billroth RA Puram`;
     }
 
-    return `Dr. Adarsh Raghavan (MBBS, MS, MCh Endocrine Surgery, MMC Chennai) specializes in:\n\n🦋 Thyroidectomy & Neck Dissection\n✨ Scarless TOETVA (No Neck Scar)\n🔘 Parathyroid MIP & High Calcium\n⚡ Laparoscopic Adrenalectomy\n🌸 Breast Conservation & Oncoplasty\n\n📍 Clinics at SIMS Vadapalani & Lifeline Kilpauk\n📞 Appointment Helpline: +91 98400 00000`;
+    return `Dr. Adarsh Raghavan (MBBS, MS, MCh Endocrine Surgery, MMC Chennai) specializes in:\n\n🦋 Thyroidectomy & Neck Dissection\n✨ Scarless TOETVA (No Neck Scar)\n🔘 Parathyroid MIP & High Calcium\n⚡ Laparoscopic Adrenalectomy\n🌸 Breast Conservation & Oncoplasty\n\n📍 Clinics: Paterson Cancer Center, SIMS Hospital & Billroth RA Puram (All by Prior Appointment)\n📞 Appointment Helpline: +91 98400 00000`;
   };
 
   const handleSendMessage = async () => {
@@ -313,7 +314,7 @@ export default function App() {
             <button onClick={() => scrollToSection('about')} className="py-2.5 text-left border-b border-gray-100">About Dr. Adarsh</button>
             <button onClick={() => scrollToSection('patient-hub')} className="py-2.5 text-left border-b border-gray-100">Patient Hub</button>
             <button onClick={() => scrollToSection('gallery')} className="py-2.5 text-left border-b border-gray-100">Surgical Gallery</button>
-            <button onClick={() => scrollToSection('locations')} className="py-2.5 text-left border-b border-gray-100">Clinics (Vadapalani & Kilpauk)</button>
+            <button onClick={() => scrollToSection('locations')} className="py-2.5 text-left border-b border-gray-100">Clinics (Vadapalani & R.A. Puram)</button>
             <button onClick={() => scrollToSection('contact')} className="py-2.5 text-left border-b border-gray-100">Contact</button>
 
             <a
@@ -347,7 +348,7 @@ export default function App() {
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F0F7F9] border border-[#05668D]/20 mb-6 shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-[#05668D] animate-ping"></span>
                 <span className="text-[11px] uppercase tracking-wider font-bold text-[#05668D]">
-                  Consulting in Chennai • SIMS Hospital & Lifeline Hospitals
+                  Consulting in Chennai • Paterson Cancer Center, SIMS Hospital & Billroth RA Puram (By Appointment)
                 </span>
               </div>
 
@@ -437,7 +438,7 @@ export default function App() {
                       Dr. Adarsh Raghavan
                     </h3>
                     <p className="text-xs text-slate-200 mt-1">
-                      SIMS Hospital Vadapalani & Lifeline Hospital Kilpauk, Chennai
+                      Paterson Cancer Center • SIMS Hospital • Billroth Hospitals, Chennai
                     </p>
                   </div>
                 </div>
@@ -628,9 +629,9 @@ export default function App() {
                       <ShieldCheck size={20} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#0B2545] text-sm">Dual Center Affiliation</h4>
+                      <h4 className="font-bold text-[#0B2545] text-sm">Consultation Centers (By Appointment)</h4>
                       <p className="text-xs text-slate-500 mt-1">
-                        Consultant at SIMS Hospital (Vadapalani) and Lifeline Multispeciality Hospital (Kilpauk).
+                        Consultant at Paterson Cancer Center, SIMS Hospital (Vadapalani), and Billroth Hospitals (R.A. Puram).
                       </p>
                     </div>
                   </div>
@@ -800,34 +801,94 @@ export default function App() {
               <div className="w-16 h-1 bg-[#C5A059] mx-auto mt-6 rounded-full"></div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Center 1: SIMS Hospital */}
-              <div className="bg-[#FAF9F6] p-7 sm:p-10 rounded-3xl border border-gray-200 card-shadow flex flex-col justify-between">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {/* Center 1: Paterson Cancer Center */}
+              <div className="bg-[#FAF9F6] p-6 sm:p-8 rounded-3xl border border-gray-200 card-shadow flex flex-col justify-between">
                 <div>
-                  <div className="flex justify-between items-start mb-6">
+                  <div className="flex justify-between items-start mb-4">
                     <div>
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-[#05668D] block mb-1">
-                        Primary Consultant Practice
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#05668D] block mb-1">
+                        Evening Oncology Practice
                       </span>
-                      <h3 className="font-serif font-bold text-2xl text-[#0B2545]">
+                      <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#0B2545]">
+                        Paterson Cancer Center
+                      </h3>
+                    </div>
+                    <div className="w-10 h-10 rounded-2xl bg-white text-[#0B2545] flex items-center justify-center shadow-xs flex-shrink-0">
+                      <MapPin size={20} className="text-[#05668D]" />
+                    </div>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 font-sans">
+                    173, NSK Salai, Vadapalani (Vijaya Health Centre premises), Chennai, Tamil Nadu - 600026
+                  </p>
+
+                  <div className="p-3.5 rounded-2xl bg-white border border-gray-100 flex items-center gap-2.5 text-xs font-bold text-[#0B2545] mb-3 shadow-xs">
+                    <Clock size={15} className="text-[#C5A059] flex-shrink-0" />
+                    <span>Mon – Sat: 6:00 PM – 9:00 PM</span>
+                  </div>
+
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-bold uppercase tracking-wider mb-5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                    On Prior Appointment Basis
+                  </div>
+
+                  <div className="w-full h-44 rounded-2xl overflow-hidden border border-gray-200 shadow-inner mb-5">
+                    <iframe
+                      src="https://maps.google.com/maps?q=Paterson+Cancer+Center,+Vadapalani,+Chennai&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen={true}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Paterson Cancer Center Location"
+                    ></iframe>
+                  </div>
+                </div>
+
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Paterson+Cancer+Center,+Vadapalani,+Chennai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 rounded-xl bg-white hover:bg-[#0B2545] text-[#0B2545] hover:text-white border border-gray-200 font-bold text-xs uppercase tracking-wider shadow-xs transition-colors flex items-center justify-center gap-2"
+                >
+                  Get Driving Directions <ExternalLink size={13} />
+                </a>
+              </div>
+
+              {/* Center 2: SIMS Hospital */}
+              <div className="bg-[#FAF9F6] p-6 sm:p-8 rounded-3xl border border-gray-200 card-shadow flex flex-col justify-between">
+                <div>
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#05668D] block mb-1">
+                        Super-Specialty Practice
+                      </span>
+                      <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#0B2545]">
                         SIMS Hospital (SRM Institutes)
                       </h3>
                     </div>
-                    <div className="w-11 h-11 rounded-2xl bg-white text-[#0B2545] flex items-center justify-center shadow-xs">
-                      <MapPin size={22} className="text-[#05668D]" />
+                    <div className="w-10 h-10 rounded-2xl bg-white text-[#0B2545] flex items-center justify-center shadow-xs flex-shrink-0">
+                      <MapPin size={20} className="text-[#05668D]" />
                     </div>
                   </div>
 
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6 font-sans">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 font-sans">
                     1, Jawaharlal Nehru Salai, 100 Feet Road, Vadapalani, Chennai, Tamil Nadu - 600026
                   </p>
 
-                  <div className="p-4 rounded-2xl bg-white border border-gray-100 flex items-center gap-3 text-xs font-bold text-[#0B2545] mb-6 shadow-xs">
-                    <Clock size={16} className="text-[#C5A059]" />
-                    <span>OPD Hours: Monday – Saturday | 10:00 AM – 3:00 PM</span>
+                  <div className="p-3.5 rounded-2xl bg-white border border-gray-100 flex items-center gap-2.5 text-xs font-bold text-[#0B2545] mb-3 shadow-xs">
+                    <Clock size={15} className="text-[#C5A059] flex-shrink-0" />
+                    <span>Mon, Wed, Fri: 3:00 PM – 4:00 PM</span>
                   </div>
 
-                  <div className="w-full h-52 rounded-2xl overflow-hidden border border-gray-200 shadow-inner mb-6">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-bold uppercase tracking-wider mb-5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                    On Prior Appointment Basis
+                  </div>
+
+                  <div className="w-full h-44 rounded-2xl overflow-hidden border border-gray-200 shadow-inner mb-5">
                     <iframe
                       src="https://maps.google.com/maps?q=SIMS+Hospital,+Vadapalani,+Chennai&t=&z=15&ie=UTF8&iwloc=&output=embed"
                       width="100%"
@@ -845,59 +906,64 @@ export default function App() {
                   href="https://www.google.com/maps/search/?api=1&query=SIMS+Hospital,+Vadapalani,+Chennai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3.5 rounded-xl bg-white hover:bg-[#0B2545] text-[#0B2545] hover:text-white border border-gray-200 font-bold text-xs uppercase tracking-wider shadow-xs transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-3 rounded-xl bg-white hover:bg-[#0B2545] text-[#0B2545] hover:text-white border border-gray-200 font-bold text-xs uppercase tracking-wider shadow-xs transition-colors flex items-center justify-center gap-2"
                 >
-                  Get Driving Directions <ExternalLink size={14} />
+                  Get Driving Directions <ExternalLink size={13} />
                 </a>
               </div>
 
-              {/* Center 2: Lifeline Multispeciality Hospital */}
-              <div className="bg-[#FAF9F6] p-7 sm:p-10 rounded-3xl border border-gray-200 card-shadow flex flex-col justify-between">
+              {/* Center 3: Billroth Hospitals (R.A. Puram) */}
+              <div className="bg-[#FAF9F6] p-6 sm:p-8 rounded-3xl border border-gray-200 card-shadow flex flex-col justify-between">
                 <div>
-                  <div className="flex justify-between items-start mb-6">
+                  <div className="flex justify-between items-start mb-4">
                     <div>
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-[#05668D] block mb-1">
-                        Evening Consultant Practice
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#05668D] block mb-1">
+                        Central Chennai Practice
                       </span>
-                      <h3 className="font-serif font-bold text-2xl text-[#0B2545]">
-                        Lifeline Multispeciality Hospitals
+                      <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#0B2545]">
+                        Billroth Hospitals (R.A. Puram)
                       </h3>
                     </div>
-                    <div className="w-11 h-11 rounded-2xl bg-white text-[#0B2545] flex items-center justify-center shadow-xs">
-                      <MapPin size={22} className="text-[#05668D]" />
+                    <div className="w-10 h-10 rounded-2xl bg-white text-[#0B2545] flex items-center justify-center shadow-xs flex-shrink-0">
+                      <MapPin size={20} className="text-[#05668D]" />
                     </div>
                   </div>
 
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6 font-sans">
-                    47/3, New Avadi Road, Kilpauk, Chennai, Tamil Nadu - 600010
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 font-sans">
+                    43, 2nd Main Road, Raja Annamalai Puram (R.A. Puram), Chennai, Tamil Nadu - 600028
                   </p>
 
-                  <div className="p-4 rounded-2xl bg-white border border-gray-100 flex items-center gap-3 text-xs font-bold text-[#0B2545] mb-6 shadow-xs">
-                    <Clock size={16} className="text-[#C5A059]" />
-                    <span>OPD Hours: Monday – Saturday | 4:30 PM – 7:30 PM</span>
+                  <div className="p-3.5 rounded-2xl bg-white border border-gray-100 flex items-center gap-2.5 text-xs font-bold text-[#0B2545] mb-3 shadow-xs">
+                    <Clock size={15} className="text-[#C5A059] flex-shrink-0" />
+                    <span>Mon – Sat: By Prior Appointment</span>
                   </div>
 
-                  <div className="w-full h-52 rounded-2xl overflow-hidden border border-gray-200 shadow-inner mb-6">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-bold uppercase tracking-wider mb-5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+                    On Prior Appointment Basis
+                  </div>
+
+                  <div className="w-full h-44 rounded-2xl overflow-hidden border border-gray-200 shadow-inner mb-5">
                     <iframe
-                      src="https://maps.google.com/maps?q=Lifeline+Multispeciality+Hospitals,+Kilpauk,+Chennai&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                      src="https://maps.google.com/maps?q=Billroth+Hospitals,+RA+Puram,+Chennai&t=&z=15&ie=UTF8&iwloc=&output=embed"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
                       allowFullScreen={true}
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Lifeline Hospital Kilpauk Location"
+                      title="Billroth Hospitals RA Puram Location"
                     ></iframe>
                   </div>
                 </div>
 
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Lifeline+Multispeciality+Hospitals,+Kilpauk,+Chennai"
+                  href="https://www.google.com/maps/search/?api=1&query=Billroth+Hospitals,+RA+Puram,+Chennai"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3.5 rounded-xl bg-white hover:bg-[#0B2545] text-[#0B2545] hover:text-white border border-gray-200 font-bold text-xs uppercase tracking-wider shadow-xs transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-3 rounded-xl bg-white hover:bg-[#0B2545] text-[#0B2545] hover:text-white border border-gray-200 font-bold text-xs uppercase tracking-wider shadow-xs transition-colors flex items-center justify-center gap-2"
                 >
-                  Get Driving Directions <ExternalLink size={14} />
+                  Get Driving Directions <ExternalLink size={13} />
                 </a>
               </div>
             </div>
@@ -1018,9 +1084,10 @@ export default function App() {
                           onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                           className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:outline-none focus:border-[#05668D] text-sm"
                         >
-                          <option>SIMS Hospital (Vadapalani)</option>
-                          <option>Lifeline Hospital (Kilpauk)</option>
-                          <option>Other / Outstation Consultation</option>
+                          <option>Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM)</option>
+                          <option>SIMS Hospital, Vadapalani (Mon/Wed/Fri, 3 PM - 4 PM)</option>
+                          <option>Billroth Hospitals, R.A. Puram (By Prior Appointment)</option>
+                          <option>Online / Tele-consultation</option>
                         </select>
                       </div>
                     </div>
@@ -1106,7 +1173,7 @@ export default function App() {
               MBBS, MS, M.Ch (Endocrine Surgery) | MMC Chennai
             </p>
             <p className="text-[11px] text-slate-400 mt-2">
-              SIMS Hospital Vadapalani & Lifeline Multispeciality Hospitals Kilpauk, Chennai
+              Paterson Cancer Center (Vadapalani) • SIMS Hospital (Vadapalani) • Billroth Hospitals (R.A. Puram), Chennai
             </p>
           </div>
 

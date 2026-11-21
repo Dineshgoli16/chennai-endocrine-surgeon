@@ -188,7 +188,7 @@ export default function SymptomChecker({ onBookClick }: { onBookClick: (specialt
                 <div className="p-4 rounded-2xl bg-white border border-gray-100 flex items-center gap-3 text-xs text-slate-600">
                   <ShieldCheck size={20} className="text-[#05668D] flex-shrink-0" />
                   <span>
-                    Bring all prior scans and blood investigations to your consultation at SIMS Vadapalani or Lifeline Kilpauk. Dr. Adarsh Raghavan will personally review your films.
+                    Bring all prior scans and blood investigations to your consultation at Paterson Cancer Center, SIMS Hospital, or Billroth Hospitals (R.A. Puram). Dr. Adarsh Raghavan will personally review your films.
                   </span>
                 </div>
               </div>
