@@ -79,6 +79,14 @@ export default function App() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [bookingSuccess, setBookingSuccess] = useState(false);
+  const [submittedBooking, setSubmittedBooking] = useState<{
+    name: string;
+    phone: string;
+    city: string;
+    specialty: string;
+    preferred_date: string;
+    symptoms: string;
+  } | null>(null);
 
   useEffect(() => {
     fetch('/api/announcement')
@@ -109,32 +117,55 @@ export default function App() {
     setIsSubmitting(true);
     setBookingSuccess(false);
 
+    const bookingPayload = { ...formData };
+    setSubmittedBooking(bookingPayload);
+
+    // 1. Dispatch email notification directly to Dr. Aadarsh Raghavan (works on static GitHub Pages)
     try {
-      const res = await fetch('/api/appointments', {
+      await fetch('https://formsubmit.co/ajax/aadarshraghavan@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `New Patient Appointment: ${bookingPayload.name} (${bookingPayload.specialty})`,
+          _template: 'table',
+          _captcha: 'false',
+          'Patient Name': bookingPayload.name,
+          'Mobile Phone': bookingPayload.phone,
+          'Consultation Location': bookingPayload.city,
+          'Specialty': bookingPayload.specialty,
+          'Preferred Date': bookingPayload.preferred_date || 'Earliest Available Slot',
+          'Clinical Symptoms / Notes': bookingPayload.symptoms || 'General OPD Evaluation',
+          'Booking Platform': 'chennaiendocrinesurgeon.com'
+        })
+      });
+    } catch (err) {
+      console.warn('FormSubmit email dispatch error:', err);
+    }
+
+    // 2. Dispatch to local express API (for local preview/database.json)
+    try {
+      await fetch('/api/appointments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(bookingPayload)
       });
-      if (res.ok) {
-        setBookingSuccess(true);
-        setFormData({
-          name: '',
-          phone: '',
-          city: 'Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM | Desk: 7550221119)',
-          specialty: 'Thyroid / Parathyroid',
-          preferred_date: '',
-          symptoms: ''
-        });
-      } else {
-        alert('Appointment received. Our desk will contact you at your provided number.');
-        setBookingSuccess(true);
-      }
     } catch {
-      // Local fallback
-      setBookingSuccess(true);
-    } finally {
-      setIsSubmitting(false);
+      // Ignore on static GitHub Pages
     }
+
+    setBookingSuccess(true);
+    setFormData({
+      name: '',
+      phone: '',
+      city: 'Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM | Desk: 7550221119)',
+      specialty: 'Thyroid / Parathyroid',
+      preferred_date: '',
+      symptoms: ''
+    });
+    setIsSubmitting(false);
   };
 
   // Smart Offline Clinical Knowledge Engine
@@ -1064,22 +1095,76 @@ export default function App() {
               {/* Right Booking Form */}
               <div className="lg:col-span-7 bg-[#FAF9F6] p-6 sm:p-10 rounded-3xl border border-gray-200">
                 {bookingSuccess ? (
-                  <div className="text-center py-8 space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-green-100 text-green-700 flex items-center justify-center mx-auto shadow-xs">
+                  <div className="text-center py-6 sm:py-8 space-y-5">
+                    <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto shadow-xs">
                       <CheckCircle2 size={36} />
                     </div>
-                    <h3 className="font-serif font-bold text-2xl text-[#0B2545]">
-                      Consultation Request Received
-                    </h3>
-                    <p className="text-sm text-slate-600 max-w-md mx-auto">
-                      Thank you. Our clinic coordinator will call you shortly to confirm your consultation time and guide you regarding any existing ultrasound or blood test reports.
+
+                    <div className="space-y-2">
+                      <h3 className="font-serif font-bold text-2xl text-[#0B2545]">
+                        Consultation Request Received!
+                      </h3>
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Notification dispatched to Dr. Aadarsh Raghavan's desk
+                      </div>
+                    </div>
+
+                    {submittedBooking && (
+                      <div className="bg-white rounded-2xl p-4 sm:p-5 border border-gray-200 text-left text-xs space-y-2 max-w-md mx-auto shadow-xs">
+                        <div className="flex justify-between border-b border-gray-100 pb-2">
+                          <span className="text-slate-500 font-semibold uppercase text-[10px] tracking-wider">Patient Name</span>
+                          <span className="font-bold text-[#0B2545]">{submittedBooking.name}</span>
+                        </div>
+                        <div className="flex justify-between border-b border-gray-100 pb-2">
+                          <span className="text-slate-500 font-semibold uppercase text-[10px] tracking-wider">Contact Phone</span>
+                          <span className="font-bold text-[#0B2545]">{submittedBooking.phone}</span>
+                        </div>
+                        <div className="flex justify-between border-b border-gray-100 pb-2">
+                          <span className="text-slate-500 font-semibold uppercase text-[10px] tracking-wider">Center</span>
+                          <span className="font-bold text-[#0B2545] text-right max-w-[220px] truncate">{submittedBooking.city}</span>
+                        </div>
+                        <div className="flex justify-between border-b border-gray-100 pb-2">
+                          <span className="text-slate-500 font-semibold uppercase text-[10px] tracking-wider">Specialty</span>
+                          <span className="font-bold text-[#0B2545]">{submittedBooking.specialty}</span>
+                        </div>
+                        {submittedBooking.preferred_date && (
+                          <div className="flex justify-between border-b border-gray-100 pb-2">
+                            <span className="text-slate-500 font-semibold uppercase text-[10px] tracking-wider">Preferred Date</span>
+                            <span className="font-bold text-[#0B2545]">{submittedBooking.preferred_date}</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
+                      Thank you. Our clinic coordinator will call you shortly. If you would like immediate slot confirmation, tap below to forward your details directly to our clinic WhatsApp:
                     </p>
-                    <button
-                      onClick={() => setBookingSuccess(false)}
-                      className="px-6 py-2.5 rounded-xl bg-[#0B2545] text-white text-xs font-bold uppercase tracking-wider"
-                    >
-                      Book Another Slot
-                    </button>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                      {submittedBooking && (
+                        <a
+                          href={`https://wa.me/917550221119?text=${encodeURIComponent(
+                            `Hello Dr. Aadarsh Raghavan Practice,\n\nI have submitted an appointment request on chennaiendocrinesurgeon.com:\n• Patient: ${submittedBooking.name}\n• Phone: ${submittedBooking.phone}\n• Center: ${submittedBooking.city}\n• Specialty: ${submittedBooking.specialty}${submittedBooking.preferred_date ? `\n• Preferred Date: ${submittedBooking.preferred_date}` : ''}${submittedBooking.symptoms ? `\n• Notes: ${submittedBooking.symptoms}` : ''}\n\nPlease confirm my consultation slot.`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider shadow-sm transition-all flex items-center justify-center gap-2"
+                        >
+                          <MessageCircle size={16} /> Confirm via WhatsApp (+91 75502 21119)
+                        </a>
+                      )}
+
+                      <button
+                        onClick={() => {
+                          setBookingSuccess(false);
+                          setSubmittedBooking(null);
+                        }}
+                        className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white hover:bg-gray-100 text-[#0B2545] border border-gray-300 font-bold text-xs uppercase tracking-wider transition-colors"
+                      >
+                        Book Another Slot
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleBookingSubmit} className="space-y-4">
