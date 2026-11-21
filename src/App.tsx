@@ -251,9 +251,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex justify-between items-center w-full">
           {/* Brand Seal */}
           <a href="#" className="flex items-center gap-3.5 group">
-            <div className="w-12 h-12 rounded-2xl bg-[#0B2545] text-white flex items-center justify-center shadow-lg shadow-[#0B2545]/20 border border-[#C5A059]/40 group-hover:scale-105 transition-transform relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#05668D]/30 to-transparent"></div>
-              <Stethoscope size={24} className="text-[#C5A059] relative z-10" />
+            <div className="w-12 h-12 rounded-2xl bg-[#0B2545] text-white flex items-center justify-center shadow-lg shadow-[#0B2545]/20 border-2 border-[#C5A059] group-hover:scale-105 transition-transform relative overflow-hidden flex-shrink-0">
+              <img src="/images/dr-adarsh-clinical.jpg" alt="Dr. Adarsh Raghavan" className="w-full h-full object-cover object-top" />
             </div>
             <div>
               <h1 className="font-serif font-bold text-base sm:text-xl text-[#0B2545] tracking-tight uppercase leading-tight group-hover:text-[#05668D] transition-colors">
@@ -423,7 +422,7 @@ export default function App() {
               >
                 <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-slate-100 aspect-4/5 relative z-10 card-shadow">
                   <img
-                    src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80"
+                    src="/images/hero-photo.jpg"
                     alt="Dr. Adarsh Raghavan - Consultant Endocrine Surgeon"
                     className="w-full h-full object-cover object-top"
                   />
@@ -579,9 +578,9 @@ export default function App() {
             <div className="lg:col-span-5 relative">
               <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white aspect-4/5 relative card-shadow">
                 <img
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=80"
-                  alt="Dr. Adarsh Raghavan in Clinical Practice"
-                  className="w-full h-full object-cover"
+                  src="/images/about-photo.jpg"
+                  alt="Dr. Adarsh Raghavan - Academic Leadership"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
 
@@ -1140,13 +1139,13 @@ export default function App() {
             {/* Chat Header */}
             <div className="bg-[#0B2545] text-white p-4.5 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-[#05668D] text-white flex items-center justify-center shadow-xs">
-                  <Bot size={22} />
+                <div className="w-11 h-11 rounded-2xl overflow-hidden border border-[#C5A059]/50 shadow-xs flex-shrink-0 bg-white">
+                  <img src="/images/dr-adarsh-clinical.jpg" alt="Dr. Adarsh Raghavan" className="w-full h-full object-cover object-top" />
                 </div>
                 <div>
-                  <h4 className="font-serif font-bold text-sm text-white">AI Health Assistant</h4>
+                  <h4 className="font-serif font-bold text-sm text-white">Dr. Adarsh's Assistant</h4>
                   <p className="text-[11px] text-[#C5A059] font-bold">
-                    Dr. Adarsh Raghavan Practice • Chennai
+                    Endocrine & Breast Practice • Chennai
                   </p>
                 </div>
               </div>
@@ -1240,12 +1239,19 @@ export default function App() {
       {/* Floating Chat Trigger Button */}
       <motion.button
         onClick={() => setIsChatOpen(!isChatOpen)}
-        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#0B2545] text-white shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform border-2 border-[#C5A059]"
+        className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#0B2545] text-white shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform border-2 border-[#C5A059] overflow-hidden"
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         aria-label="Open AI Health Assistant"
       >
-        {isChatOpen ? <X size={24} /> : <MessageCircle size={26} />}
+        {isChatOpen ? (
+          <X size={24} />
+        ) : (
+          <div className="relative w-full h-full flex items-center justify-center">
+            <img src="/images/dr-adarsh-clinical.jpg" alt="Dr. Adarsh AI" className="w-full h-full object-cover object-top" />
+            <span className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-white shadow-xs"></span>
+          </div>
+        )}
       </motion.button>
 
       {/* Patient Guide Modal */}
