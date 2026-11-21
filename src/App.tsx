@@ -4,7 +4,7 @@ import {
   Phone, MapPin, ExternalLink, Award, BookOpen, Stethoscope, Users,
   ChevronRight, Clock, Activity, MessageCircle, Send, Bot, Loader2,
   AlertCircle, ShieldCheck, CheckCircle2, Menu, X, Sparkles, HeartPulse,
-  Calendar, Lock, ArrowUpRight, Star, Heart, Check, Sparkle
+  Calendar, Lock, ArrowUpRight, Star, Heart, Check, Sparkle, Instagram, Mail
 } from 'lucide-react';
 import Gallery from './components/Gallery';
 import AdminPanel from './components/AdminPanel';
@@ -31,22 +31,22 @@ SPECIALTIES & PROCEDURES:
 
 HOSPITAL CONSULTATION LOCATIONS IN CHENNAI (ALL ON PRIOR APPOINTMENT BASIS):
 - Paterson Cancer Center: 175, NSK Salai, Vadapalani, Chennai - 600026. Timings: Mon–Sat: 6:00 PM – 9:00 PM (By Prior Appointment). Direct Appointment Desk: 7550221119 / +91 75502 21119.
-- SIMS Hospital (SRM Institutes for Medical Science): Jawaharlal Nehru Salai, 100 Feet Road, Vadapalani, Chennai - 600026. Timings: Mon, Wed, Fri: 3:00 PM – 4:00 PM (By Prior Appointment).
-- Billroth Hospitals: 43, 2nd Main Road, Raja Annamalai Puram (R.A. Puram), Chennai - 600028. Timings: By Prior Appointment.
-- Emergency Helpline: +91 98400 00000 | WhatsApp: +91 98400 00000.
+- SIMS Hospital (SRM Institutes for Medical Science): Jawaharlal Nehru Salai, 100 Feet Road, Vadapalani, Chennai - 600026. Timings: Mon, Tue, Thu, Sat: 5:00 PM – 6:00 PM (By Prior Appointment).
+- Billroth Hospitals: 43, 2nd Main Road, Raja Annamalai Puram (R.A. Puram), Chennai - 600028. Timings: Mon–Sat: 3:00 PM – 4:00 PM (By Prior Appointment).
+- Emergency Helpline: +91 98400 00000 | WhatsApp: +91 98400 00000 | Instagram: @th_e_best_surgeon | Email: chennaiendocrinesurgeon@gmail.com.
 
 RULES:
 1. Always be empathetic, polite, and reassuring.
 2. Provide accurate educational guidance on thyroid, parathyroid, scarless TOETVA, adrenal, and breast conditions.
 3. Understand Tamil medical terms when patients type them (e.g., 'தைராய்டு', 'கழுத்து கட்டி', 'மார் கட்டி').
 4. Never make a definitive personal diagnosis; recommend booking a clinical consultation.
-5. Provide clear hospital timing and booking details: Paterson Cancer Center (Mon-Sat 6-9 PM | Direct Desk: 7550221119), SIMS Hospital (Mon/Wed/Fri 3-4 PM), and Billroth Hospitals RA Puram (By Appointment). Remind patients that ALL consultations across all centers are strictly on an appointment basis.
+5. Provide clear hospital timing and booking details: Paterson Cancer Center (Mon-Sat 6-9 PM | Direct Desk: 7550221119), SIMS Hospital (Mon, Tue, Thu, Sat 5-6 PM), and Billroth Hospitals RA Puram (Mon-Sat 3-4 PM). Remind patients that ALL consultations across all centers are strictly on an appointment basis.
 6. Keep responses under 180 words with clear bullet points.`;
 
 const INITIAL_CHAT_MESSAGES = [
   {
     role: 'bot' as const,
-    content: "Vanakkam & Welcome! I am Dr. Aadarsh Raghavan's AI Health Assistant.\n\nI can help you with:\n• Thyroid swellings, nodules & cancer care\n• Scarless Thyroid Surgery (TOETVA)\n• Calcium, PTH & Parathyroid adenomas\n• Adrenal tumors & laparoscopic surgery\n• Breast lump assessment & oncoplasty\n• OPD timings & appointment booking at Paterson Cancer Center (Desk: 75502 21119), SIMS Hospital & Billroth Hospitals (All by prior appointment)\n\nHow may I assist you today?"
+    content: "Vanakkam & Welcome! I am Dr. Aadarsh Raghavan's AI Health Assistant.\n\nI can help you with:\n• Thyroid swellings, nodules & cancer care\n• Scarless Thyroid Surgery (TOETVA)\n• Calcium, PTH & Parathyroid adenomas\n• Adrenal tumors & laparoscopic surgery\n• Breast lump assessment & oncoplasty\n• OPD timings & appointment booking at Paterson Cancer Center (Desk: 75502 21119), SIMS Hospital & Billroth Hospitals (All by prior appointment)\n• Follow Dr. Aadarsh on Instagram: @th_e_best_surgeon\n\nHow may I assist you today?"
   }
 ];
 
@@ -66,7 +66,7 @@ export default function App() {
   const [galleryRefresh, setGalleryRefresh] = useState(0);
 
   // Announcement
-  const [announcement, setAnnouncement] = useState('Consultations at Paterson Cancer Center (Mon-Sat 6-9 PM | Desk: 7550221119), SIMS Hospital (Mon/Wed/Fri 3-4 PM) & Billroth RA Puram — All On Prior Appointment Basis');
+  const [announcement, setAnnouncement] = useState('Consultations at Paterson Cancer Center (Mon-Sat 6-9 PM | Desk: 7550221119), SIMS Hospital (Mon/Tue/Thu/Sat 5-6 PM) & Billroth RA Puram (Mon-Sat 3-4 PM) — All On Prior Appointment Basis');
 
   // Appointment Form
   const [formData, setFormData] = useState({
@@ -122,7 +122,7 @@ export default function App() {
 
     // 1. Dispatch email notification directly to Dr. Aadarsh Raghavan (works on static GitHub Pages)
     try {
-      await fetch('https://formsubmit.co/ajax/aadarshraghavan@gmail.com', {
+      await fetch('https://formsubmit.co/ajax/chennaiendocrinesurgeon@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -173,7 +173,7 @@ export default function App() {
     const input = userInput.toLowerCase();
 
     if (input.includes('book') || input.includes('appointment') || input.includes('timing') || input.includes('slot') || input.includes('time') || input.includes('consult')) {
-      return `To schedule an OPD consultation with Dr. Aadarsh Raghavan (All consultations strictly by prior appointment):\n\n📍 Paterson Cancer Center (Vadapalani)\nMon – Sat: 6:00 PM – 9:00 PM\n📞 Direct Desk: +91 75502 21119\n\n📍 SIMS Hospital (Vadapalani)\nMon, Wed, Fri: 3:00 PM – 4:00 PM (By Prior Appointment)\n\n📍 Billroth Hospitals (R.A. Puram)\nMon – Sat: By Prior Appointment\n\n📞 Central Helpline: +91 98400 00000\n💬 WhatsApp: +91 98400 00000\n\nYou can also submit the booking form below on this website for an immediate callback.`;
+      return `To schedule an OPD consultation with Dr. Aadarsh Raghavan (All consultations strictly by prior appointment):\n\n📍 Paterson Cancer Center (Vadapalani)\nMon – Sat: 6:00 PM – 9:00 PM\n📞 Direct Desk: +91 75502 21119\n\n📍 SIMS Hospital (Vadapalani)\nMon, Tue, Thu, Sat: 5:00 PM – 6:00 PM (By Prior Appointment)\n\n📍 Billroth Hospitals (R.A. Puram)\nMon – Sat: 3:00 PM – 4:00 PM (By Prior Appointment)\n\n📞 Central Helpline: +91 98400 00000\n💬 WhatsApp: +91 98400 00000\n📸 Instagram: @th_e_best_surgeon\n✉️ Email: chennaiendocrinesurgeon@gmail.com\n\nYou can also submit the booking form below on this website for an immediate callback.`;
     }
 
     if (input.includes('scarless') || input.includes('toetva') || input.includes('baba') || input.includes('scar') || input.includes('transoral')) {
@@ -197,14 +197,14 @@ export default function App() {
     }
 
     if (input.includes('sims') || input.includes('paterson') || input.includes('billroth') || input.includes('vadapalani') || input.includes('puram') || input.includes('where') || input.includes('location')) {
-      return `Dr. Aadarsh Raghavan's Consultation Locations in Chennai (All on Prior Appointment Basis):\n\n1. Paterson Cancer Center (Vadapalani)\n175, NSK Salai, Vadapalani, Chennai - 600026\nTimings: 6:00 PM – 9:00 PM (Mon–Sat, By Appointment)\n📞 Direct Desk: +91 75502 21119\n\n2. SIMS Hospital (SRM Institutes, Vadapalani)\n100 Feet Road, Vadapalani, Chennai - 600026\nTimings: 3:00 PM – 4:00 PM (Mon, Wed, Fri, By Appointment)\n\n3. Billroth Hospitals (R.A. Puram)\n43, 2nd Main Road, R.A. Puram, Chennai - 600028\nTimings: By Prior Appointment\n\nCentral Helpline: +91 98400 00000`;
+      return `Dr. Aadarsh Raghavan's Consultation Locations in Chennai (All on Prior Appointment Basis):\n\n1. Paterson Cancer Center (Vadapalani)\n175, NSK Salai, Vadapalani, Chennai - 600026\nTimings: 6:00 PM – 9:00 PM (Mon–Sat, By Appointment)\n📞 Direct Desk: +91 75502 21119\n\n2. SIMS Hospital (SRM Institutes, Vadapalani)\n100 Feet Road, Vadapalani, Chennai - 600026\nTimings: 5:00 PM – 6:00 PM (Mon, Tue, Thu, Sat, By Appointment)\n\n3. Billroth Hospitals (R.A. Puram)\n43, 2nd Main Road, R.A. Puram, Chennai - 600028\nTimings: 3:00 PM – 4:00 PM (Mon–Sat, By Appointment)\n\nCentral Helpline: +91 98400 00000 | Instagram: @th_e_best_surgeon`;
     }
 
     if (input.includes('hello') || input.includes('hi') || input.includes('vanakkam') || input.includes('namaste')) {
-      return `Vanakkam! How can I assist you today? You can ask about:\n\n• Thyroid nodules & scarless surgery (TOETVA)\n• Parathyroid disorders & high calcium\n• Adrenal laparoscopic surgery\n• Breast lump evaluation & oncoplasty\n• Booking an OPD appointment at Paterson Cancer Center, SIMS Hospital, or Billroth RA Puram`;
+      return `Vanakkam! How can I assist you today? You can ask about:\n\n• Thyroid nodules & scarless surgery (TOETVA)\n• Parathyroid disorders & high calcium\n• Adrenal laparoscopic surgery\n• Breast lump evaluation & oncoplasty\n• Booking an OPD appointment at Paterson Cancer Center, SIMS Hospital, or Billroth RA Puram\n• Follow on Instagram: @th_e_best_surgeon`;
     }
 
-    return `Dr. Aadarsh Raghavan (MBBS, MS, MCh Endocrine Surgery, MMC Chennai) specializes in:\n\n🦋 Thyroidectomy & Neck Dissection\n✨ Scarless TOETVA (No Neck Scar)\n🔘 Parathyroid MIP & High Calcium\n⚡ Laparoscopic Adrenalectomy\n🌸 Breast Conservation & Oncoplasty\n\n📍 Clinics: Paterson Cancer Center, SIMS Hospital & Billroth RA Puram (All by Prior Appointment)\n📞 Appointment Helpline: +91 98400 00000`;
+    return `Dr. Aadarsh Raghavan (MBBS, MS, MCh Endocrine Surgery, MMC Chennai) specializes in:\n\n🦋 Thyroidectomy & Neck Dissection\n✨ Scarless TOETVA (No Neck Scar)\n🔘 Parathyroid MIP & High Calcium\n⚡ Laparoscopic Adrenalectomy\n🌸 Breast Conservation & Oncoplasty\n\n📍 Clinics: Paterson Cancer Center, SIMS Hospital & Billroth RA Puram (All by Prior Appointment)\n📞 Appointment Helpline: +91 98400 00000\n📸 Instagram: @th_e_best_surgeon`;
   };
 
   const handleSendMessage = async () => {
@@ -307,6 +307,16 @@ export default function App() {
             <div className="h-4 w-px bg-gray-200"></div>
 
             <a
+              href="https://instagram.com/th_e_best_surgeon"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Follow Dr. Aadarsh on Instagram: @th_e_best_surgeon"
+              className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-xs"
+            >
+              <Instagram size={14} />
+            </a>
+
+            <a
               href="tel:+919840000000"
               className="text-red-700 font-bold text-xs px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200/80 hover:bg-red-100 transition-colors flex items-center gap-1.5 shadow-xs"
             >
@@ -347,6 +357,16 @@ export default function App() {
             <button onClick={() => scrollToSection('gallery')} className="py-2.5 text-left border-b border-gray-100">Surgical Gallery</button>
             <button onClick={() => scrollToSection('locations')} className="py-2.5 text-left border-b border-gray-100">Clinics (Vadapalani & R.A. Puram)</button>
             <button onClick={() => scrollToSection('contact')} className="py-2.5 text-left border-b border-gray-100">Contact</button>
+
+            <a
+              href="https://instagram.com/th_e_best_surgeon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-2.5 text-left border-b border-gray-100 flex items-center justify-between text-pink-600 font-bold"
+            >
+              <span>Instagram</span>
+              <span className="flex items-center gap-1 text-xs lowercase font-semibold"><Instagram size={14} /> @th_e_best_surgeon</span>
+            </a>
 
             <a
               href="tel:+919840000000"
@@ -930,7 +950,7 @@ export default function App() {
 
                   <div className="p-3.5 rounded-2xl bg-white border border-gray-100 flex items-center gap-2.5 text-xs font-bold text-[#0B2545] mb-3 shadow-xs">
                     <Clock size={15} className="text-[#C5A059] flex-shrink-0" />
-                    <span>Mon, Wed, Fri: 3:00 PM – 4:00 PM</span>
+                    <span>Mon, Tue, Thu, Sat: 5:00 PM – 6:00 PM</span>
                   </div>
 
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-bold uppercase tracking-wider mb-5">
@@ -985,7 +1005,7 @@ export default function App() {
 
                   <div className="p-3.5 rounded-2xl bg-white border border-gray-100 flex items-center gap-2.5 text-xs font-bold text-[#0B2545] mb-3 shadow-xs">
                     <Clock size={15} className="text-[#C5A059] flex-shrink-0" />
-                    <span>Mon – Sat: By Prior Appointment</span>
+                    <span>Mon – Sat: 3:00 PM – 4:00 PM</span>
                   </div>
 
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-bold uppercase tracking-wider mb-5">
@@ -1086,6 +1106,42 @@ export default function App() {
                       </p>
                       <p className="font-bold text-[#0B2545] text-base group-hover:text-green-700 transition-colors">
                         +91 98400 00000
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://instagram.com/th_e_best_surgeon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-2xl bg-[#FAF9F6] border border-pink-200/80 hover:border-pink-500 transition-all group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 text-white flex items-center justify-center shadow-xs transition-transform group-hover:scale-105">
+                      <Instagram size={20} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase font-bold text-pink-600 tracking-wider">
+                        Instagram Official
+                      </p>
+                      <p className="font-bold text-[#0B2545] text-base group-hover:text-pink-600 transition-colors">
+                        @th_e_best_surgeon
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
+                    href="mailto:chennaiendocrinesurgeon@gmail.com"
+                    className="flex items-center gap-4 p-4 rounded-2xl bg-[#FAF9F6] border border-gray-100 hover:border-[#05668D] transition-all group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#05668D] group-hover:bg-[#05668D] group-hover:text-white flex items-center justify-center shadow-xs transition-colors">
+                      <Mail size={20} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
+                        Email Inquiries & Reports
+                      </p>
+                      <p className="font-bold text-[#0B2545] text-sm group-hover:text-[#05668D] transition-colors break-all">
+                        chennaiendocrinesurgeon@gmail.com
                       </p>
                     </div>
                   </a>
@@ -1206,8 +1262,8 @@ export default function App() {
                           className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:outline-none focus:border-[#05668D] text-sm"
                         >
                           <option>Paterson Cancer Center (Mon-Sat, 6 PM - 9 PM | Desk: 7550221119)</option>
-                          <option>SIMS Hospital, Vadapalani (Mon/Wed/Fri, 3 PM - 4 PM)</option>
-                          <option>Billroth Hospitals, R.A. Puram (By Prior Appointment)</option>
+                          <option>SIMS Hospital, Vadapalani (Mon, Tue, Thu, Sat, 5 PM - 6 PM)</option>
+                          <option>Billroth Hospitals, R.A. Puram (Mon-Sat, 3 PM - 4 PM)</option>
                           <option>Online / Tele-consultation</option>
                         </select>
                       </div>
@@ -1298,14 +1354,33 @@ export default function App() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-[11px] font-bold uppercase tracking-wider text-slate-300">
-            <button onClick={() => scrollToSection('specialties')} className="hover:text-white transition-colors">Specialties</button>
-            <button onClick={() => scrollToSection('about')} className="hover:text-white transition-colors">Academic Pedigree</button>
-            <button onClick={() => scrollToSection('patient-hub')} className="hover:text-white transition-colors">Patient Hub</button>
-            <button onClick={() => scrollToSection('locations')} className="hover:text-white transition-colors">Clinics</button>
-            <button onClick={() => setIsAdminOpen(true)} className="hover:text-[#C5A059] transition-colors flex items-center gap-1">
-              <Lock size={12} /> Staff Portal
-            </button>
+          <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-wrap justify-center gap-6 text-[11px] font-bold uppercase tracking-wider text-slate-300">
+              <button onClick={() => scrollToSection('specialties')} className="hover:text-white transition-colors">Specialties</button>
+              <button onClick={() => scrollToSection('about')} className="hover:text-white transition-colors">Academic Pedigree</button>
+              <button onClick={() => scrollToSection('patient-hub')} className="hover:text-white transition-colors">Patient Hub</button>
+              <button onClick={() => scrollToSection('locations')} className="hover:text-white transition-colors">Clinics</button>
+              <button onClick={() => setIsAdminOpen(true)} className="hover:text-[#C5A059] transition-colors flex items-center gap-1">
+                <Lock size={12} /> Staff Portal
+              </button>
+            </div>
+
+            <div className="flex items-center gap-3 pt-1">
+              <a
+                href="https://instagram.com/th_e_best_surgeon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-amber-500 hover:via-pink-500 hover:to-purple-600 text-white font-bold text-[11px] transition-all"
+              >
+                <Instagram size={13} className="text-pink-400" /> @th_e_best_surgeon
+              </a>
+              <a
+                href="mailto:chennaiendocrinesurgeon@gmail.com"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-[11px] transition-colors"
+              >
+                <Mail size={13} className="text-[#C5A059]" /> chennaiendocrinesurgeon@gmail.com
+              </a>
+            </div>
           </div>
 
           <div className="text-center md:text-right text-[11px] text-slate-400">

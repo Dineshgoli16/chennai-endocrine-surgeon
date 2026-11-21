@@ -30,7 +30,7 @@ app.use('/uploads', express.static(uploadDir));
 // JSON database file for zero-config local/shared hosting
 const dbFile = path.join(__dirname, 'database.json');
 const initialDB = {
-  announcement: 'Consultations at Paterson Cancer Center (Mon-Sat 6-9 PM | Desk: 7550221119), SIMS Hospital (Mon/Wed/Fri 3-4 PM) & Billroth RA Puram — All on Prior Appointment Basis',
+  announcement: 'Consultations at Paterson Cancer Center (Mon-Sat 6-9 PM | Desk: 7550221119), SIMS Hospital (Mon/Tue/Thu/Sat 5-6 PM) & Billroth RA Puram (Mon-Sat 3-4 PM) — All on Prior Appointment Basis',
   appointments: [],
   media: []
 };
